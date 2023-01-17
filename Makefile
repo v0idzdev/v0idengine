@@ -9,7 +9,7 @@ OBJS     = $(subst %.cpp, %.o, $(SRCS))
 all: $(BIN) clean
 
 $(OBJS): $(SRCS)
-	$(CC) -c $^ $(CXXFLAGS)
+	$(CC) -c $^ $(CXXFLAGS) -I $(SRC)
 
 $(BIN): $(OBJS)
 	$(CC) $@.cpp -o $@ $^ $(LIBS)

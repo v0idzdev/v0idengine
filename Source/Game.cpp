@@ -3,9 +3,22 @@
 Game::Game()
   : window("My Game")
 {
-  // TODO: Add loading code here
+  // Create a splash screen scene
+  std::shared_ptr<SceneSplashScreen> splashScreen =
+    std::make_shared<SceneSplashScreen>(resourcePath, sceneManager, window);
 
-  deltaTime = clock.restart();
+  // Create a main level scene
+  std::shared_ptr<SceneLevel> mainLevel =
+    std::make_shared<SceneLevel>(resourcePath);
+
+  unsigned int splashScreenID = sceneManager.add(splashScreen);
+  unsigned int mainLevelID = sceneManager.add(mainLevel);
+  splashScreen->setSwitchToScene(mainLevelID);
+  sceneManager.switchTo(splashScreenID);
+
+  // TODO: Add additional loading code here
+
+  deltaTime = clock.restart().asSeconds();
 }
 
 Game::~Game() {}
@@ -13,36 +26,34 @@ Game::~Game() {}
 void
 Game::captureInput()
 {
-  input.update();
+  sceneManager.processInput();
 }
 
 void
 Game::update()
 {
   window.update();
-
-  // TODO: Add update code here
+  sceneManager.update(deltaTime);
 }
 
 void
 Game::lateUpdate()
 {
+  sceneManager.lateUpdate(deltaTime);
 }
 
 void
 Game::draw()
 {
   window.beginDraw();
-
-  // TODO: Add drawing code here
-
+  sceneManager.draw(window);
   window.endDraw();
 }
 
 void
 Game::calculateDeltaTime()
 {
-  deltaTime = clock.restart();
+  deltaTime = clock.restart().asSeconds();
 }
 
 bool

@@ -3,6 +3,9 @@
 
 #include "Input.hpp"
 #include "ResourcePath.hpp"
+#include "SceneLevel.hpp"
+#include "SceneSplashScreen.hpp"
+#include "SceneStateMachine.hpp"
 #include "Window.hpp"
 #include <SFML/Graphics.hpp>
 
@@ -35,11 +38,12 @@ private:
   Window window;
   ResourcePath resourcePath;
   Input input;
+  SceneStateMachine sceneManager;
 
   // TODO: Put game sprites and variables here
 
   sf::Clock clock;
-  sf::Time deltaTime;
+  float deltaTime;
 };
 
 #endif

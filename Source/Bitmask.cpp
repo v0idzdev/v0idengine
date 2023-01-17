@@ -13,6 +13,12 @@ Bitmask::setMask(Bitmask& other)
   bits = other.getMask();
 }
 
+uint32_t
+Bitmask::getMask() const
+{
+  return bits;
+}
+
 bool
 Bitmask::getBit(int pos) const
 {
