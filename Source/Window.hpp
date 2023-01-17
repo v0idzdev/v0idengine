@@ -3,12 +3,11 @@
 
 #include <SFML/Graphics.hpp>
 
-namespace vm {
-
 class Window
 {
 public:
   Window(const std::string& windowName);
+  ~Window();
 
   void update();
   void beginDraw();
@@ -19,7 +18,5 @@ public:
 private:
   sf::RenderWindow window;
 };
-
-}; // namespace vm
 
 #endif

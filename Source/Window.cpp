@@ -1,43 +1,43 @@
 #include "Window.hpp"
 
-vm::Window::Window(const std::string& windowName)
+Window::Window(const std::string& windowName)
   : window(sf::VideoMode(800, 600), windowName, sf::Style::Titlebar)
 {
   window.setVerticalSyncEnabled(true);
 }
 
+Window::~Window() {}
+
 void
-vm::Window::update()
+Window::update()
 {
   sf::Event event;
 
-  if (window.pollEvent(event)) {
-    if (event.type == sf::Event::Closed) {
+  if (window.pollEvent(event))
+    if (event.type == sf::Event::Closed)
       window.close();
-    }
-  }
 }
 
 void
-vm::Window::beginDraw()
+Window::beginDraw()
 {
   window.clear(sf::Color::White);
 }
 
 void
-vm::Window::draw(const sf::Drawable& drawable)
+Window::draw(const sf::Drawable& drawable)
 {
   window.draw(drawable);
 }
 
 void
-vm::Window::endDraw()
+Window::endDraw()
 {
   window.display();
 }
 
 bool
-vm::Window::isOpen() const
+Window::isOpen() const
 {
   return window.isOpen();
 }

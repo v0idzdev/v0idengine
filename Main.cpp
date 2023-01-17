@@ -3,11 +3,15 @@
 int
 main()
 {
-  vm::Game game;
+  Game game;
 
   while (game.isRunning()) {
+    game.captureInput();
     game.update();
     game.lateUpdate();
     game.draw();
+    game.calculateDeltaTime();
   }
+
+  return 0;
 }

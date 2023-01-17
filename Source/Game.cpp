@@ -1,28 +1,52 @@
 #include "Game.hpp"
 
-vm::Game::Game()
+Game::Game()
   : window("My Game")
 {
+  // TODO: Add loading code here
+
+  deltaTime = clock.restart();
+}
+
+Game::~Game() {}
+
+void
+Game::captureInput()
+{
+  input.update();
 }
 
 void
-vm::Game::update()
+Game::update()
 {
   window.update();
+
+  // TODO: Add update code here
 }
 
 void
-vm::Game::lateUpdate()
+Game::lateUpdate()
 {
 }
 
 void
-vm::Game::draw()
+Game::draw()
 {
+  window.beginDraw();
+
+  // TODO: Add drawing code here
+
+  window.endDraw();
+}
+
+void
+Game::calculateDeltaTime()
+{
+  deltaTime = clock.restart();
 }
 
 bool
-vm::Game::isRunning() const
+Game::isRunning() const
 {
   return window.isOpen();
 }
