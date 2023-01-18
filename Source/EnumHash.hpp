@@ -1,7 +1,7 @@
 #ifndef ENUMHASH_HPP
 #define ENUMHASH_HPP
 
-#include <iostream>
+#include <cstddef>
 
 struct EnumHash
 {

@@ -1,9 +1,9 @@
 #ifndef SCENESTATEMACHINE_HPP
 #define SCENESTATEMACHINE_HPP
 
-#include <EnumHash.hpp>
-#include <Scene.hpp>
-#include <Window.hpp>
+#include "EnumHash.hpp"
+#include "Scene.hpp"
+#include "Window.hpp"
 #include <memory>
 #include <unordered_map>
 
