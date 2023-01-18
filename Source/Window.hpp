@@ -6,7 +6,7 @@
 class Window
 {
 public:
-  Window(const std::string& windowName);
+  Window(const std::string& name);
   ~Window();
 
   void update();

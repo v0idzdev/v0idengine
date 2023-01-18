@@ -2,7 +2,7 @@
 
 ResourcePath::ResourcePath()
 {
-  path = "./";
+  path = "Resources/";
 
 #ifdef MACOS
   CFBundleRef mainBundle = CFBundleGetMainBundle();
