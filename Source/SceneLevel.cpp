@@ -10,7 +10,7 @@ SceneLevel::~SceneLevel() {}
 void
 SceneLevel::onCreate()
 {
-  // TODO: Resource loading code with resourcePath.get() + "filename.png"
+  // TODO: Load content
 }
 
 void
@@ -22,16 +22,18 @@ void
 SceneLevel::processInput()
 {
   input.update();
+
+  // TODO: Process input
 }
 
 void
 SceneLevel::update(float deltaTime)
 {
-  // TODO: Update code here
+  // TODO: Update state
 }
 
 void
 SceneLevel::draw(Window& window)
 {
-  // TODO: Drawing code using window.draw();
+  // TODO: Draw assets
 }
