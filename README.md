@@ -19,7 +19,8 @@ touch Main.cpp Source/{Game.cpp,Game.hpp,SceneLevel.cpp,SceneLevel.hpp} Makefile
 ```
 
 3. Add boilerplate
-Main.cpp:
+
+`Main.cpp`
 ```cpp
 #include "Source/Game.hpp"
 
@@ -37,7 +38,7 @@ int main() {
   return 0;
 }
 ```
-Source/Game.hpp
+`Source/Game.hpp`
 ```cpp
 #ifndef GAME_HPP
 #define GAME_HPP
@@ -75,7 +76,7 @@ private:
 
 #endif
 ```
-Source/Game.cpp
+`Source/Game.cpp`
 ```cpp
 #include "Game.hpp"
 
@@ -136,7 +137,7 @@ Game::isRunning() const
   return window.isOpen();
 }
 ```
-SceneLevel.hpp
+`SceneLevel.hpp`
 ```cpp
 #ifndef SCENELEVEL_HPP
 #define SCENELEVEL_HPP
@@ -166,7 +167,7 @@ private:
 
 #endif
 ```
-SceneLevel.cpp
+`SceneLevel.cpp`
 ```cpp
 #include "SceneLevel.hpp"
 
