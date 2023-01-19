@@ -1,9 +1,8 @@
 #ifndef SCENESPLASHSCREEN_HPP
 #define SCENESPLASHSCREEN_HPP
 
-#include "ResourcePath.hpp"
-#include "SceneStateMachine.hpp"
-#include <SFML/Graphics.hpp>
+#include <v0idengine/ResourcePath.hpp>
+#include <v0idengine/SceneStateMachine.hpp>
 
 class SceneSplashScreen : public Scene
 {
