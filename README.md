@@ -212,8 +212,10 @@ SceneLevel::draw(v0id::Window& window)
 }
 ```
 
-### API
+## API
 v0idengine works by creating a `Game` instance, which contains a `Window` (for rendering) and a `SceneStateMachine` (for switching scenes). Scenes will contain your update logic, drawing logic, and assets, while `Game` will contain your scene management code.
+
+### Scenes
 
 #### Creating scenes
 Scenes are created by overriding `Scene`. Add your game logic in `update()`, drawing code in `draw()`, and assets as private variables. 
@@ -288,4 +290,55 @@ Scenes are referenced by their ID. Use it to switch to a scene
   ...
  }
  ```
+
+### Objects and components
+Components are simple data containers. Objects are a collection of one or more of these.
+
+#### Creating an object
+`.hpp`
+```cpp
+...
+
+#include <v0idengine/Object.hpp>
+
+class MyScene : public v0id::Scene
+{
+...
+
+private:
+  v0id::Object player;
+
+...
+}
 ```
+`.cpp`
+```cpp
+void
+MyScene::onCreate()
+{
+  player = std::make_shared<Object>();
+}
+```
+
+#### Adding Components
+`.cpp`
+```cpp
+void
+MyScene::onCreate()
+{
+  ...
+  
+  // Create a new component
+  // Sprite components, in particular, can be loaded
+  auto sprite = player->addComponent<v0id::component::Sprite>();
+  sprite->load(resourcePath.get() + "player.png");
+}
+
+void
+MyScene::draw(v0id::Window& window)
+{
+  // We can also draw sprites
+  player->draw(window);
+}
+```
+
