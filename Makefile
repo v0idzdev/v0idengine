@@ -34,17 +34,19 @@ $(TARGET): $(OBJFILES)
 %.o: %.cpp
 	$(CC) $(CXXFLAGS) -c -o $@ $<
 
-install: all
+install: all clean
 	$(MKDIR) $(INCLUDEDIR)
 	$(CP) -t $(INCLUDEDIR) $(HEADERFILES)
 	$(CP) $(BUILDDIR)/$(TARGET) $(LIBDIR)/
 	@echo [*] v0idengine has been installed.
 
-uninstall: clean
+uninstall: purge
 	$(RM) -rf $(INCLUDEDIR)
 	$(RM) $(LIBDIR)/$(TARGET)
 	@echo [*] v0idengine has been uninstalled.
 
 clean:
 	$(RM) $(SRCDIR)/*.o
+
+purge: clean
 	$(RM) -rf $(BUILDDIR)
