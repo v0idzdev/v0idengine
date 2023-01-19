@@ -1,9 +1,9 @@
 #ifndef SCENELEVEL_HPP
 #define SCENELEVEL_HPP
 
-#include "Input.hpp"
-#include "ResourcePath.hpp" // WorkingDirectory
-#include "Scene.hpp"
+#include <v0idengine/Input.hpp>
+#include <v0idengine/ResourcePath.hpp>
+#include <v0idengine/Scene.hpp>
 
 class SceneLevel : public Scene
 {

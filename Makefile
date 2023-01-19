@@ -9,38 +9,42 @@ CXXFLAGS    = -O3 -fPIC -std=c++17 -Wall -Wextra -Wpedantic -Wcast-align \
 MKDIR       = mkdir -p
 CP          = cp
 
-# Release and version information
-VERSION     = 0.1.0-a.1
-RELEASEDIR  = Release/v0idengine-$(VERSION)/
-INCLUDEDIR  = $(RELEASEDIR)/include
-LIBDIR      = $(RELEASEDIR)/lib
-TARGET      = libv0idengine-$(VERSION).so
-
-# Source and object file information
+# Directory information
+TARGET      = libv0idengine.so
+INCLUDEDIR  = /usr/include/v0idengine
+LIBDIR      = /usr/lib
 SRCDIR      = Source
-SRCFILES    = $(wildcard $(SRCDIR)/*.cpp)
-HEADERFILES = $(wildcard $(SRCDIR)/*.hpp)
+BUILDDIR    = Build
+# Manually specify files for clarity
+SRCFILES    = $(patsubst %, $(SRCDIR)/%, Bitmask.cpp Input.cpp \
+	ResourcePath.cpp SceneStateMachine.cpp Window.cpp)
+HEADERFILES = $(SRCFILES:.cpp=.hpp) $(patsubst %, $(SRCDIR)/%, EnumHash.hpp \
+	Scene.hpp)
 OBJFILES    = $(SRCFILES:.cpp=.o)
 
-.PHONY: clean purge
+.PHONY: clean
 
-all: $(TARGET) headers clean
-	@echo Successfully compiled v0idengine!
+all: $(TARGET)
+	@echo [*] v0idengine has been compiled.
 
-# Create .so using compiled .o files
 $(TARGET): $(OBJFILES)
-	$(MKDIR) $(LIBDIR) $(INCLUDEDIR)
-	$(CC) $(CXXFLAGS) -shared -o $(LIBDIR)/$@ $<
-
-# Copy .hpp files into release folder
-headers:
-	$(CP) -t $(INCLUDEDIR) $(wildcard $(SRCDIR)/*.hpp)
+	$(MKDIR) $(BUILDDIR)
+	$(CC) $(CXXFLAGS) -shared -o $(BUILDDIR)/$@ $^
 
 %.o: %.cpp
 	$(CC) $(CXXFLAGS) -c -o $@ $<
 
+install: all
+	$(MKDIR) $(INCLUDEDIR)
+	$(CP) -t $(INCLUDEDIR) $(HEADERFILES)
+	$(CP) $(BUILDDIR)/$(TARGET) $(LIBDIR)/
+	@echo [*] v0idengine has been installed.
+
+uninstall: clean
+	$(RM) -rf $(INCLUDEDIR)
+	$(RM) $(LIBDIR)/$(TARGET)
+	@echo [*] v0idengine has been uninstalled.
+
 clean:
 	$(RM) $(SRCDIR)/*.o
-
-purge:
-	$(RM) -rf $(RELEASEDIR)
+	$(RM) -rf $(BUILDDIR)

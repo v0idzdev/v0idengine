@@ -1,8 +1,6 @@
 #include "Source/Game.hpp"
 
-int
-main()
-{
+int main() {
   Game game;
 
   while (game.isRunning()) {

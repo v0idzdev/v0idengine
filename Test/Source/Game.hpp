@@ -1,13 +1,12 @@
 #ifndef GAME_HPP
 #define GAME_HPP
 
-#include "Input.hpp"
-#include "ResourcePath.hpp"
 #include "SceneLevel.hpp"
 #include "SceneSplashScreen.hpp"
-#include "SceneStateMachine.hpp"
-#include "Window.hpp"
-#include <SFML/Graphics.hpp>
+#include <v0idengine/Input.hpp>
+#include <v0idengine/ResourcePath.hpp>
+#include <v0idengine/SceneStateMachine.hpp>
+#include <v0idengine/Window.hpp>
 
 class Game
 {

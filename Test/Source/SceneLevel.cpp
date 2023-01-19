@@ -23,6 +23,9 @@ SceneLevel::processInput()
 {
   input.update();
 
+  if (input.isKeyPressed(Input::Key::Esc))
+    exit(0);
+
   // TODO: Process input
 }
 
