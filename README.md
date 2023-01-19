@@ -64,10 +64,10 @@ public:
   bool isRunning() const;
 
 private:
-  Window window;
-  ResourcePath resourcePath;
-  Input input;
-  SceneStateMachine sceneManager;
+  v0id::Window window;
+  v0id::ResourcePath resourcePath;
+  v0id::Input input;
+  v0id::SceneStateMachine sceneManager;
 
   sf::Clock clock;
   float deltaTime;
@@ -145,23 +145,23 @@ Game::isRunning() const
 #include <v0idengine/ResourcePath.hpp>
 #include <v0idengine/Scene.hpp>
 
-class SceneLevel : public Scene
+class SceneLevel : public v0id::Scene
 {
 public:
-  SceneLevel(ResourcePath& resourcePath);
+  SceneLevel(v0id::ResourcePath& resourcePath);
   ~SceneLevel();
 
   void onCreate() override;
   void onDestroy() override;
   void processInput() override;
   void update(float deltaTime) override;
-  void draw(Window& window) override;
+  void draw(v0id::Window& window) override;
 
 private:
   // TODO: Place sprites and scene variables here
 
-  ResourcePath& resourcePath;
-  Input input;
+  v0id::ResourcePath& resourcePath;
+  v0id::Input input;
 };
 
 #endif
@@ -170,7 +170,7 @@ private:
 ```cpp
 #include "SceneLevel.hpp"
 
-SceneLevel::SceneLevel(ResourcePath& resourcePath)
+SceneLevel::SceneLevel(v0id::ResourcePath& resourcePath)
   : resourcePath(resourcePath)
 {
 }
@@ -193,7 +193,7 @@ SceneLevel::processInput()
 {
   input.update();
 
-  if (input.isKeyPressed(Input::Key::Esc))
+  if (input.isKeyPressed(v0id::Input::Key::Esc))
     exit(0);
 
   // TODO: Process input
@@ -206,7 +206,7 @@ SceneLevel::update(float deltaTime)
 }
 
 void
-SceneLevel::draw(Window& window)
+SceneLevel::draw(v0id::Window& window)
 {
   // TODO: Draw assets
 }
