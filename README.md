@@ -216,17 +216,49 @@ SceneLevel::draw(Window& window)
 v0idengine works by creating a `Game` instance, which contains a `Window` (for rendering) and a `SceneStateMachine` (for switching scenes). Scenes will contain your update logic, drawing logic, and assets, while `Game` will contain your scene management code.
 
 #### Creating scenes
-Scenes are created by overriding `Scene`. It is recommended to use the template above. Adding one looks like this:
+Scenes are created by overriding `Scene`. Add your game logic in `update()`, drawing code in `render()`, and assets as private variables. 
+```cpp
+#ifndef MYSCENE_HPP
+#define MYSCENE_HPP
+
+#include <v0idengine/Input.hpp>
+#include <v0idengine/ResourcePath.hpp>
+#include <v0idengine/Scene.hpp>
+
+class MyScene : public Scene
+{
+public:
+  MyScene(ResourcePath& resourcePath);
+  ~MyScene();
+
+  void onCreate() override;
+  void onDestroy() override;
+  void processInput() override;
+  void update(float deltaTime) override;
+  void draw(Window& window) override;
+
+private:
+  // TODO: Place sprites and scene variables here
+
+  ResourcePath& resourcePath;
+  Input input;
+};
+
+#endif
+```
+
+#### Adding scenes
+Adding one looks like this:
 ```cpp
 Game::Game()
   : window("My Game")
 {
   // Create a shared pointer to your scene
-  std::shared_ptr<SceneLevel> myScene =
-    std::make_shared<SceneLevel>(resourcePath); 
+  std::shared_ptr<MyScene> myScene =
+    std::make_shared<MyScene>(resourcePath); 
     
   // Add the scene to the SceneStateMachine
-  // Its ID will be returned. You need this to switch to the scene
+  // Its ID will be returned. You need this to switch to or remove the scene
   unsigned int mySceneID = sceneManager.add(myScene);
 }
 ```
@@ -238,7 +270,7 @@ Scenes are referenced by their ID. Use it to switch to a scene
   ...
   
   // Switch to the scene using the ID
-  sceneManager.switchTo(myScene);
+  sceneManager.switchTo(mySceneID);
  
   ...
  }
@@ -251,7 +283,7 @@ Scenes are referenced by their ID. Use it to switch to a scene
   ...
   
   // Remove the scene
-  sceneManager.remove(myScene);
+  sceneManager.remove(mySceneID);
  
   ...
  }
