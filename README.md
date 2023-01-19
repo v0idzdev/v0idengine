@@ -44,7 +44,6 @@ int main() {
 #define GAME_HPP
 
 #include "SceneLevel.hpp"
-#include "SceneSplashScreen.hpp"
 #include <v0idengine/Input.hpp>
 #include <v0idengine/ResourcePath.hpp>
 #include <v0idengine/SceneStateMachine.hpp>
