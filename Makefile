@@ -17,9 +17,9 @@ SRCDIR      = Source
 BUILDDIR    = Build
 # Manually specify files for clarity
 SRCFILES    = $(patsubst %, $(SRCDIR)/%, Bitmask.cpp Input.cpp \
-	ResourcePath.cpp SceneStateMachine.cpp Window.cpp)
-HEADERFILES = $(SRCFILES:.cpp=.hpp) $(patsubst %, $(SRCDIR)/%, EnumHash.hpp \
-	Scene.hpp)
+	Object.cpp ResourcePath.cpp SceneStateMachine.cpp Window.cpp)
+HEADERFILES = $(SRCFILES:.cpp=.hpp) $(patsubst %, $(SRCDIR)/%, Component.hpp \
+	EnumHash.hpp Scene.hpp)
 OBJFILES    = $(SRCFILES:.cpp=.o)
 
 .PHONY: clean
@@ -31,7 +31,7 @@ $(TARGET): $(OBJFILES)
 	$(MKDIR) $(BUILDDIR)
 	$(CC) $(CXXFLAGS) -shared -o $(BUILDDIR)/$@ $^
 
-%.o: %.cpp
+%.o: %.cppbottom text
 	$(CC) $(CXXFLAGS) -c -o $@ $<
 
 install: all clean
