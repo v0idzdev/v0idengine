@@ -216,7 +216,7 @@ SceneLevel::draw(Window& window)
 v0idengine works by creating a `Game` instance, which contains a `Window` (for rendering) and a `SceneStateMachine` (for switching scenes). Scenes will contain your update logic, drawing logic, and assets, while `Game` will contain your scene management code.
 
 #### Creating scenes
-Scenes are created by overriding `Scene`. Add your game logic in `update()`, drawing code in `render()`, and assets as private variables. 
+Scenes are created by overriding `Scene`. Add your game logic in `update()`, drawing code in `draw()`, and assets as private variables. 
 ```cpp
 #ifndef MYSCENE_HPP
 #define MYSCENE_HPP
