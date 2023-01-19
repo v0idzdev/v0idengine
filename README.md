@@ -211,3 +211,49 @@ SceneLevel::draw(Window& window)
   // TODO: Draw assets
 }
 ```
+
+### API
+v0idengine works by creating a `Game` instance, which contains a `Window` (for rendering) and a `SceneStateMachine` (for switching scenes). Scenes will contain your update logic, drawing logic, and assets, while `Game` will contain your scene management code.
+
+#### Creating scenes
+Scenes are created by overriding `Scene`. It is recommended to use the template above. Adding one looks like this:
+```cpp
+Game::Game()
+  : window("My Game")
+{
+  // Create a shared pointer to your scene
+  std::shared_ptr<SceneLevel> myScene =
+    std::make_shared<SceneLevel>(resourcePath); 
+    
+  // Add the scene to the SceneStateMachine
+  // Its ID will be returned. You need this to switch to the scene
+  unsigned int mySceneID = sceneManager.add(myScene);
+}
+```
+
+#### Switching scenes
+Scenes are referenced by their ID. Use it to switch to a scene
+```cpp
+{
+  ...
+  
+  // Switch to the scene using the ID
+  sceneManager.switchTo(myScene);
+ 
+  ...
+ }
+ ```
+ 
+ #### Removing scenes
+ You also need the ID to remove scenes
+```cpp
+{
+  ...
+  
+  // Remove the scene
+  sceneManager.remove(myScene);
+ 
+  ...
+ }
+ ```
+```
