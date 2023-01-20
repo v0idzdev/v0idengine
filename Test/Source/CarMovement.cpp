@@ -1,18 +1,20 @@
-#include "CarController.hpp"
+#include "CarMovement.hpp"
 #include <v0idengine/Object.hpp>
 
-CarMovement::CarMovement(v0id::Object* owner)
+using v0id::Object, v0id::Input, v0id::component::Transform;
+
+CarMovement::CarMovement(Object* owner)
   : Component(owner)
   , rotation(0.f)
   , speed(0.f)
-  , acceleration(10.f)
-  , rps(15.f)
-  , maxSpeed(100.f)
+  , acceleration(0.8f)
+  , rps(0.15f)
+  , maxSpeed(8.f)
 {
 }
 
 void
-CarMovement::setInput(v0id::Input* input)
+CarMovement::setInput(Input* input)
 {
   this->input = input;
 }
@@ -25,23 +27,24 @@ CarMovement::update(float deltaTime)
     return;
 
   // Steering
-  if (input->isKeyPressed(v0id::Input::Key::Left)) {
+  if (input->isKeyPressed(Input::Key::Left)) {
     steerLeft();
-  } else if (input->isKeyPressed(v0id::Input::Key::Right)) {
+  } else if (input->isKeyPressed(Input::Key::Right)) {
     steerRight();
   }
 
   // Acceleration and braking
-  if (input->isKeyPressed(v0id::Input::Key::Up)) {
+  if (input->isKeyPressed(Input::Key::Up)) {
     accelerate();
-  } else if (input->isKeyPressed(v0id::Input::Key::Down)) {
+  } else if (input->isKeyPressed(Input::Key::Down)) {
     decelerate();
   }
 
   // Update position
-  auto transform = owner->getComponent<v0id::component::Transform>();
+  auto transform = owner->getComponent<Transform>();
   transform->addPosition(std::sin(rotation) * speed,
                          std::cos(rotation) * speed);
+  // Update rotation? Add rotation to transform?
 }
 
 void
