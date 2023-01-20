@@ -2,6 +2,7 @@
 #define OBJECT_HPP
 
 #include "Component.hpp"
+#include "Transform.hpp"
 #include "Window.hpp"
 #include <memory>
 #include <vector>
@@ -11,6 +12,8 @@ namespace v0id {
 class Object
 {
 public:
+  Object();
+
   void awake(); // Called when object is created
   void start(); // Called after awake
 

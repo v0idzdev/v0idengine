@@ -2,6 +2,11 @@
 
 namespace v0id {
 
+Object::Object()
+{
+  addComponent<component::Transform>();
+}
+
 void
 Object::awake()
 {

@@ -1,26 +1,27 @@
 # Compiler flags and warnings
-CC          = g++
-CXXFLAGS    = -O3 -fPIC -std=c++17 -Wall -Wextra -Wpedantic -Wcast-align \
+CC           = g++
+CXXFLAGS     = -O3 -fPIC -std=c++17 -Wall -Wextra -Wpedantic -Wcast-align \
 	-Wcast-qual -Wdisabled-optimization -Wduplicated-branches -Wduplicated-cond \
 	-Wformat=2 -Wlogical-op -Wmissing-include-dirs -Wnull-dereference \
 	-Woverloaded-virtual -Wpointer-arith -Wshadow -Wswitch-enum -Wvla
 
 # Bash shell commands
-MKDIR       = mkdir -p
-CP          = cp
+MKDIR        = mkdir -p
+CP           = cp
 
 # Directory information
-TARGET      = libv0idengine.so
-INCLUDEDIR  = /usr/include/v0idengine
-LIBDIR      = /usr/lib
-SRCDIR      = Source
-BUILDDIR    = Build
+TARGET       = libv0idengine.so
+INCLUDEDIR   = /usr/include/v0idengine
+LIBDIR       = /usr/lib
+SRCDIR       = Source
+BUILDDIR     = Build
 # Manually specify files for clarity
-SRCFILES    = $(patsubst %, $(SRCDIR)/%, Bitmask.cpp Input.cpp \
-	Object.cpp ResourcePath.cpp SceneStateMachine.cpp Window.cpp)
-HEADERFILES = $(SRCFILES:.cpp=.hpp) $(patsubst %, $(SRCDIR)/%, Component.hpp \
+SRCFILES     = $(patsubst %, $(SRCDIR)/%, Bitmask.cpp Input.cpp \
+	KeyboardMovement.cpp Object.cpp ResourcePath.cpp SceneStateMachine.cpp \
+	Sprite.cpp Transform.cpp Window.cpp)
+HEADERFILES  = $(SRCFILES:.cpp=.hpp) $(patsubst %, $(SRCDIR)/%, Component.hpp \
 	EnumHash.hpp Scene.hpp)
-OBJFILES    = $(SRCFILES:.cpp=.o)
+OBJFILES     = $(SRCFILES:.cpp=.o)
 
 .PHONY: clean
 
