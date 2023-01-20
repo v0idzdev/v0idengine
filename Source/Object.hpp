@@ -6,6 +6,8 @@
 #include <memory>
 #include <vector>
 
+namespace v0id {
+
 class Object
 {
 public:
@@ -46,5 +48,7 @@ public:
 private:
   std::vector<std::shared_ptr<Component>> components;
 };
+
+}
 
 #endif

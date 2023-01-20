@@ -4,6 +4,8 @@
 #include "Bitmask.hpp"
 #include <SFML/Graphics.hpp>
 
+namespace v0id {
+
 class Input
 {
 public:
@@ -32,5 +34,7 @@ private:
   Bitmask thisFrameKeys;
   Bitmask lastFrameKeys;
 };
+
+}
 
 #endif

@@ -1,5 +1,7 @@
 #include "Window.hpp"
 
+namespace v0id {
+
 Window::Window(const std::string& name)
   : window(sf::VideoMode(800, 600),
            name,
@@ -49,4 +51,6 @@ bool
 Window::isOpen() const
 {
   return window.isOpen();
+}
+
 }

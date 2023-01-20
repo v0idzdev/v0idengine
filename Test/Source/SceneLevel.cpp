@@ -1,6 +1,6 @@
 #include "SceneLevel.hpp"
 
-SceneLevel::SceneLevel(ResourcePath& resourcePath)
+SceneLevel::SceneLevel(v0id::ResourcePath& resourcePath)
   : resourcePath(resourcePath)
 {
 }
@@ -23,7 +23,7 @@ SceneLevel::processInput()
 {
   input.update();
 
-  if (input.isKeyPressed(Input::Key::Esc))
+  if (input.isKeyPressed(v0id::Input::Key::Esc))
     exit(0);
 
   // TODO: Process input
@@ -36,7 +36,7 @@ SceneLevel::update(float deltaTime)
 }
 
 void
-SceneLevel::draw(Window& window)
+SceneLevel::draw(v0id::Window& window)
 {
   // TODO: Draw assets
 }

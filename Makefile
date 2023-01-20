@@ -31,7 +31,7 @@ $(TARGET): $(OBJFILES)
 	$(MKDIR) $(BUILDDIR)
 	$(CC) $(CXXFLAGS) -shared -o $(BUILDDIR)/$@ $^
 
-%.o: %.cppbottom text
+%.o: %.cpp
 	$(CC) $(CXXFLAGS) -c -o $@ $<
 
 install: all clean

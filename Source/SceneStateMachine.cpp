@@ -1,5 +1,7 @@
 #include "SceneStateMachine.hpp"
 
+namespace v0id {
+
 SceneStateMachine::SceneStateMachine()
   : scenes(0)
   , currentScene(0)
@@ -78,4 +80,6 @@ SceneStateMachine::switchTo(unsigned int id)
     currentScene = it->second;
     currentScene->onActivate();
   }
+}
+
 }

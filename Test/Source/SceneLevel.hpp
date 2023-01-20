@@ -5,23 +5,23 @@
 #include <v0idengine/ResourcePath.hpp>
 #include <v0idengine/Scene.hpp>
 
-class SceneLevel : public Scene
+class SceneLevel : public v0id::Scene
 {
 public:
-  SceneLevel(ResourcePath& resourcePath);
+  SceneLevel(v0id::ResourcePath& resourcePath);
   ~SceneLevel();
 
   void onCreate() override;
   void onDestroy() override;
   void processInput() override;
   void update(float deltaTime) override;
-  void draw(Window& window) override;
+  void draw(v0id::Window& window) override;
 
 private:
   // TODO: Place sprites and scene variables here
 
-  ResourcePath& resourcePath;
-  Input input;
+  v0id::ResourcePath& resourcePath;
+  v0id::Input input;
 };
 
 #endif

@@ -4,12 +4,12 @@
 #include <v0idengine/ResourcePath.hpp>
 #include <v0idengine/SceneStateMachine.hpp>
 
-class SceneSplashScreen : public Scene
+class SceneSplashScreen : public v0id::Scene
 {
 public:
-  SceneSplashScreen(ResourcePath& resourcePath,
-                    SceneStateMachine& sceneManager,
-                    Window& window);
+  SceneSplashScreen(v0id::ResourcePath& resourcePath,
+                    v0id::SceneStateMachine& sceneManager,
+                    v0id::Window& window);
   ~SceneSplashScreen();
 
   void onCreate() override;
@@ -17,15 +17,15 @@ public:
   void onActivate() override;
   void setSwitchToScene(unsigned int id);
   void update(float deltaTime) override;
-  void draw(Window& window) override;
+  void draw(v0id::Window& window) override;
 
 private:
   sf::Texture splashTexture;
   sf::Sprite splashSprite;
 
-  ResourcePath& resourcePath;
-  SceneStateMachine& sceneManager;
-  Window& window;
+  v0id::ResourcePath& resourcePath;
+  v0id::SceneStateMachine& sceneManager;
+  v0id::Window& window;
 
   float showForSeconds; // How long to show the splash screen for
   float currentSeconds; // How long the splash screen has been shown for

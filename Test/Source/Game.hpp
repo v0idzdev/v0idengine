@@ -34,10 +34,10 @@ public:
   bool isRunning() const;
 
 private:
-  Window window;
-  ResourcePath resourcePath;
-  Input input;
-  SceneStateMachine sceneManager;
+  v0id::Window window;
+  v0id::ResourcePath resourcePath;
+  v0id::Input input;
+  v0id::SceneStateMachine sceneManager;
 
   // TODO: Put game sprites and variables here
 

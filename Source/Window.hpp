@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics.hpp>
 
+namespace v0id {
+
 class Window
 {
 public:
@@ -19,5 +21,7 @@ public:
 private:
   sf::RenderWindow window;
 };
+
+}
 
 #endif

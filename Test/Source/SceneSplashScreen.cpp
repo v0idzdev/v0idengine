@@ -1,8 +1,8 @@
 #include "SceneSplashScreen.hpp"
 
-SceneSplashScreen::SceneSplashScreen(ResourcePath& resourcePath,
-                                     SceneStateMachine& sceneManager,
-                                     Window& window)
+SceneSplashScreen::SceneSplashScreen(v0id::ResourcePath& resourcePath,
+                                     v0id::SceneStateMachine& sceneManager,
+                                     v0id::Window& window)
   : sceneManager(sceneManager)
   , resourcePath(resourcePath)
   , window(window)
@@ -56,7 +56,7 @@ SceneSplashScreen::update(float deltaTime)
 }
 
 void
-SceneSplashScreen::draw(Window& window)
+SceneSplashScreen::draw(v0id::Window& window)
 {
   window.draw(splashSprite);
 }

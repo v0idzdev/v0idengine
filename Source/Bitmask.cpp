@@ -1,5 +1,7 @@
 #include "Bitmask.hpp"
 
+namespace v0id {
+
 Bitmask::Bitmask()
   : bits(0)
 {
@@ -55,4 +57,6 @@ void
 Bitmask::clear()
 {
   bits = 0;
+}
+
 }

@@ -3,6 +3,8 @@
 
 #include "Window.hpp"
 
+namespace v0id {
+
 class Object; // Forward declare
 
 class Component
@@ -20,5 +22,7 @@ public:
 protected:
   Object* owner;
 };
+
+}
 
 #endif

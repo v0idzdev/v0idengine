@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
+namespace v0id {
+
 class Bitmask
 {
 public:
@@ -21,5 +23,7 @@ public:
 private:
   uint32_t bits;
 };
+
+}
 
 #endif

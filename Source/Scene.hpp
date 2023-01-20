@@ -3,6 +3,8 @@
 
 #include "Window.hpp"
 
+namespace v0id {
+
 // Abstract base class describing a scene
 class Scene
 {
@@ -25,5 +27,7 @@ public:
   // Scene drawing code goes here
   virtual void draw(Window& window){};
 };
+
+}
 
 #endif

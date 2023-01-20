@@ -3,6 +3,8 @@
 
 #include <string>
 
+namespace v0id {
+
 #ifdef MACOS
 #include "CoreFoundation/CoreFoundation.h"
 #endif
@@ -18,5 +20,7 @@ public:
 private:
   std::string path;
 };
+
+}
 
 #endif

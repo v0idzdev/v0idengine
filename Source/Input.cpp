@@ -1,5 +1,7 @@
 #include "Input.hpp"
 
+namespace v0id {
+
 void
 Input::update()
 {
@@ -55,4 +57,6 @@ Input::isKeyUp(Key key)
 
   // Key up this frame, but down last frame
   return !thisFrame && lastFrame;
+}
+
 }

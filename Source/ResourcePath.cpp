@@ -1,5 +1,7 @@
 #include "ResourcePath.hpp"
 
+namespace v0id {
+
 ResourcePath::ResourcePath()
 {
   path = "./Resources/";
@@ -20,3 +22,5 @@ ResourcePath::ResourcePath()
 }
 
 ResourcePath::~ResourcePath() {}
+
+}

@@ -7,6 +7,8 @@
 #include <memory>
 #include <unordered_map>
 
+namespace v0id {
+
 class SceneStateMachine
 {
 public:
@@ -30,5 +32,7 @@ private:
   std::shared_ptr<Scene> currentScene;
   unsigned int insertedSceneID;
 };
+
+}
 
 #endif

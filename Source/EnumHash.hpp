@@ -3,6 +3,8 @@
 
 #include <cstddef>
 
+namespace v0id {
+
 struct EnumHash
 {
   template<typename T>
@@ -11,5 +13,7 @@ struct EnumHash
     return static_cast<std::size_t>(t);
   }
 };
+
+}
 
 #endif
