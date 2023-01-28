@@ -11,3 +11,12 @@ add_executable(v0idengine-example
   src/SceneSplashScreen.cpp
   )
 target_include_directories(v0idengine-example PRIVATE src)
+
+set(CMAKE_LIBRARY_PATH ${CMAKE_LIBRARY_PATH} /usr/local/lib)
+target_link_libraries(v0idengine-example
+  PRIVATE
+    v0idengine
+    sfml-graphics
+    sfml-window
+    sfml-system
+  )
