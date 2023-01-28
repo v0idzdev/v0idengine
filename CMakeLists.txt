@@ -2,19 +2,20 @@ cmake_minimum_required(VERSION 3.9)
 project(v0idengine
   VERSION 0.1.0
   DESCRIPTION "A minimal 2D game engine"
-  LANGUAGE CXX
+  LANGUAGES CXX
   )
 include(GNUInstallDirs)
-add_library(v0idengine SHARED
-  src/Bitmask.cpp
-  src/Input.cpp
-  src/KeyboardMovement.cpp
-  src/Object.cpp
-  src/ResourcePath.cpp
-  src/SceneStateMachine.cpp
-  src/Sprite.cpp
-  src/Transform.cpp
-  src/Window.cpp
+add_library(v0idengine
+  SHARED
+    src/Bitmask.cpp
+    src/Input.cpp
+    src/KeyboardMovement.cpp
+    src/Object.cpp
+    src/ResourcePath.cpp
+    src/SceneStateMachine.cpp
+    src/Sprite.cpp
+    src/Transform.cpp
+    src/Window.cpp
   )
 set(PUBLIC_HEADERS
   "include/v0idengine/Input.hpp"

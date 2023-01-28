@@ -1,5 +1,5 @@
-#ifndef SCENESPLASHSCREEN_HPP
-#define SCENESPLASHSCREEN_HPP
+#ifndef SCENE_SPLASH_SCREEN_HPP
+#define SCENE_SPLASH_SCREEN_HPP
 
 #include <v0idengine/ResourcePath.hpp>
 #include <v0idengine/SceneStateMachine.hpp>
