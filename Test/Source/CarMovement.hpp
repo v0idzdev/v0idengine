@@ -15,13 +15,18 @@ public:
 
 private:
   void accelerate();
-  void decelerate();
+  void brake();
+  void reverse();
   void steerLeft();
   void steerRight();
 
-  // Rps: Radians per second - angular accel
-  float rotation, speed, acceleration, rps;
-  const float maxSpeed;
+  bool isStationary();
+  bool isReversing();
+
+  // Dps: Degrees per second - angular accel
+  float rotation, speed, acceleration, reverseAcceleration, dps;
+  const float maxSpeed, maxReverseSpeed, brakingPercent, engineBrakingPercent,
+    stationaryThreshold;
   v0id::Input* input;
 };
 

@@ -1,15 +1,22 @@
 #include "CarMovement.hpp"
 #include <v0idengine/Object.hpp>
 
-using v0id::Object, v0id::Input, v0id::component::Transform;
+using v0id::Input;
+using v0id::Object;
+using v0id::component::Transform;
 
 CarMovement::CarMovement(Object* owner)
   : Component(owner)
   , rotation(0.f)
   , speed(0.f)
-  , acceleration(0.8f)
-  , rps(0.15f)
-  , maxSpeed(8.f)
+  , acceleration(0.185f)
+  , reverseAcceleration(0.0995f)
+  , dps(1.1f)
+  , maxSpeed(7.f)
+  , maxReverseSpeed(0.8f)
+  , brakingPercent(0.17f)
+  , engineBrakingPercent(0.01f) // Engine braking per second
+  , stationaryThreshold(0.1f)
 {
 }
 
@@ -27,24 +34,34 @@ CarMovement::update(float deltaTime)
     return;
 
   // Steering
-  if (input->isKeyPressed(Input::Key::Left)) {
-    steerLeft();
-  } else if (input->isKeyPressed(Input::Key::Right)) {
-    steerRight();
+  if (isStationary()) { // Uhhhhh
+    if (input->isKeyPressed(Input::Key::Left)) {
+      steerLeft();
+    } else if (input->isKeyPressed(Input::Key::Right)) {
+      steerRight();
+    }
   }
 
   // Acceleration and braking
   if (input->isKeyPressed(Input::Key::Up)) {
     accelerate();
   } else if (input->isKeyPressed(Input::Key::Down)) {
-    decelerate();
+    if (isReversing()) { // Also uhh
+      reverse();
+    } else {
+      brake();
+    }
   }
+
+  // EngineBrakingPercent is the % decrease in speed per second
+  speed *= 1 - engineBrakingPercent;
 
   // Update position
   auto transform = owner->getComponent<Transform>();
-  transform->addPosition(std::sin(rotation) * speed,
-                         std::cos(rotation) * speed);
-  // Update rotation? Add rotation to transform?
+  auto rotationRadians = rotation * 3.141592653f / 180.f;
+  transform->addPosition(std::sin(rotationRadians) * speed,
+                         -std::cos(rotationRadians) * speed);
+  transform->setRotation(rotation);
 }
 
 void
@@ -57,22 +74,46 @@ CarMovement::accelerate()
 }
 
 void
-CarMovement::decelerate()
+CarMovement::brake()
 {
-  speed -= acceleration;
+  speed *= 1 - brakingPercent;
+}
 
-  if (speed < 0)
-    speed = 0;
+void
+CarMovement::reverse()
+{
+  speed -= reverseAcceleration;
+
+  if (speed < -maxReverseSpeed)
+    speed = -maxReverseSpeed;
 }
 
 void
 CarMovement::steerLeft()
 {
-  rotation -= rps;
+  if (speed == 0)
+    return;
+
+  rotation -= dps;
 }
 
 void
 CarMovement::steerRight()
 {
-  rotation += rps;
+  if (speed == 0)
+    return;
+
+  rotation += dps;
+}
+
+bool
+CarMovement::isStationary()
+{
+  return (speed < -stationaryThreshold || speed > stationaryThreshold);
+}
+
+bool
+CarMovement::isReversing()
+{
+  return (speed < stationaryThreshold);
 }

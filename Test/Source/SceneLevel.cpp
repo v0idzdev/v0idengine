@@ -14,10 +14,12 @@ SceneLevel::onCreate()
   player = std::make_shared<v0id::Object>();
   auto sprite = player->addComponent<v0id::component::Sprite>();
   auto controller = player->addComponent<CarMovement>();
+  auto transform = player->getComponent<v0id::component::Transform>();
 
   // Init components
   sprite->load(resourcePath.get() + "car.png");
   controller->setInput(&input);
+  transform->setPosition(400, 300);
 }
 
 void
