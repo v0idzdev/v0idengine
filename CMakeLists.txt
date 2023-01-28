@@ -35,7 +35,7 @@ set(PUBLIC_HEADERS
 set_target_properties(v0idengine PROPERTIES
   VERSION ${PROJECT_VERSION}
   SOVERSION 1
-  PUBLIC_HEADER ${PUBLIC_HEADERS}
+  PUBLIC_HEADER "${PUBLIC_HEADERS}"
   )
 configure_file(v0idengine.pc.in v0idengine.pc @ONLY)
 target_include_directories(v0idengine
@@ -53,8 +53,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 endif()
 install(
   TARGETS v0idengine
-  LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
-  PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+  LIBRARY
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}
+  PUBLIC_HEADER
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
   )
 install(
   FILES ${CMAKE_BINARY_DIR}/v0idengine.pc
