@@ -48,7 +48,7 @@ _deps
 *.pc
 
 # .vscode
-.vscode
+**/.vscode/
 
 # Shared object files
 .so
