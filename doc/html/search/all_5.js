@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['get_13',['get',['../classv0id_1_1ResourcePath.html#ac1cb89d2760e26972d2668f618371639',1,'v0id::ResourcePath']]],
-  ['getcentre_14',['getCentre',['../classv0id_1_1Window.html#a0a763f52e03840de30352abbd6db1592',1,'v0id::Window']]],
-  ['getcomponent_15',['getComponent',['../classv0id_1_1Object.html#a67b352b57b9509d2ca12f6c2a1a95f1b',1,'v0id::Object']]],
-  ['getposition_16',['getPosition',['../classv0id_1_1component_1_1Transform.html#a57e7990f1b8138cdbdf4b7dc9908af30',1,'v0id::component::Transform']]],
-  ['getrotation_17',['getRotation',['../classv0id_1_1component_1_1Transform.html#ac47ad6db74b5750c9e7092f350a1e865',1,'v0id::component::Transform']]],
-  ['getscale_18',['getScale',['../classv0id_1_1component_1_1Transform.html#a050b510b3a41afc6153493bcc9d26e2b',1,'v0id::component::Transform']]]
+  ['enddraw_12',['endDraw',['../classv0id_1_1Window.html#af8112635a66d718b141e3499e6df6a16',1,'v0id::Window']]],
+  ['esc_13',['Esc',['../classv0id_1_1Input.html#a54d843553e0f2edbe25e2ddd289eed59a91f4253ca587ca8ac4e63b9ceb351f5d',1,'v0id::Input']]]
 ];

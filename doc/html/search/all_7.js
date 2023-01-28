@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['key_24',['Key',['../classv0id_1_1Input.html#a54d843553e0f2edbe25e2ddd289eed59',1,'v0id::Input']]],
-  ['keyboardmovement_25',['KeyboardMovement',['../classv0id_1_1component_1_1KeyboardMovement.html#a3c8a7e4640ec9aa76ad9003bc5ffb774',1,'v0id::component::KeyboardMovement::KeyboardMovement()'],['../classv0id_1_1component_1_1KeyboardMovement.html',1,'v0id::component::KeyboardMovement']]]
+  ['input_20',['Input',['../classv0id_1_1Input.html',1,'v0id']]],
+  ['iskeydown_21',['isKeyDown',['../classv0id_1_1Input.html#a523a61bdf173aefa7cbba16ffb5b5bfd',1,'v0id::Input']]],
+  ['iskeypressed_22',['isKeyPressed',['../classv0id_1_1Input.html#af23046f4e78e963f51750c80d27e4a83',1,'v0id::Input']]],
+  ['iskeyup_23',['isKeyUp',['../classv0id_1_1Input.html#ae5db08144f630caccaeafe24feadc392',1,'v0id::Input']]],
+  ['isopen_24',['isOpen',['../classv0id_1_1Window.html#ab67bcc6b2ba784c10ddaa7a2420d4fbb',1,'v0id::Window']]]
 ];

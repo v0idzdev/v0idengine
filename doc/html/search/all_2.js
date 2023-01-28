@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['component_8',['Component',['../classv0id_1_1Component.html#a8192edbae9796b215af4835873df8a8b',1,'v0id::Component::Component()'],['../classv0id_1_1Component.html',1,'v0id::Component']]]
+  ['begindraw_8',['beginDraw',['../classv0id_1_1Window.html#ab3b6fab91ded6837ded7b557d314ccfe',1,'v0id::Window']]]
 ];
