@@ -1,5 +1,5 @@
-#ifndef ENUMHASH_HPP
-#define ENUMHASH_HPP
+#ifndef ENUM_HASH_HPP
+#define ENUM_HASH_HPP
 
 #include <cstddef>
 

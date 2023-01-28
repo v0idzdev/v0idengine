@@ -1,5 +1,5 @@
-#ifndef C_KeyboardMovement_hpp
-#define C_KeyboardMovement_hpp
+#ifndef KEYBOARD_MOVEMENT_HPP
+#define KEYBOARD_MOVEMENT_HPP
 
 #include "Component.hpp"
 #include "Input.hpp"
