@@ -46,17 +46,21 @@ target_include_directories(v0idengine
     include/v0idengine/ECS
     include/v0idengine/SceneManagement
   )
-if(MSVC) # Microsoft Visual C++ - Windows
+
+# Set C++17
+if(MSVC)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++17")
-else() # GCC, Clang - Linux
+else()
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++17")
 endif()
+
+# Install v0idengine
 install(
   TARGETS v0idengine
   LIBRARY
     DESTINATION ${CMAKE_INSTALL_LIBDIR}
   PUBLIC_HEADER
-    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/v0idengine/
   )
 install(
   FILES ${CMAKE_BINARY_DIR}/v0idengine.pc

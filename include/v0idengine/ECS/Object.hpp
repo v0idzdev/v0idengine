@@ -16,10 +16,10 @@ public:
   /// @brief Create a new Object
   Object();
 
-  /// @brief Called when the object is created
+  /// @brief Called when the Object is created
   void awake();
 
-  /// @brief Called after the Awake method
+  /// @brief Called after the awake method
   void start();
 
   /// @brief Call the update method of each component on each frame
@@ -31,7 +31,7 @@ public:
   void lateUpdate(float deltaTime);
 
   /// @brief Call the draw method of each component on each frame
-  /// @param window A rendering window
+  /// @param window A window used to display drawables
   void draw(Window& window);
 
   /// @brief Add a new component to the Object
