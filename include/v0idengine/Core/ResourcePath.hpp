@@ -9,16 +9,25 @@ namespace v0id {
 #include "CoreFoundation/CoreFoundation.h"
 #endif
 
-/// @brief Stores the location of the Resources directory
+/**
+ * @brief Stores the location of the Resources directory
+ *
+ */
 class ResourcePath
 {
 public:
-  /// @brief Create a new ResourcePath
+  /**
+   * @brief Construct a new Resource Path object
+   *
+   */
   ResourcePath();
   ~ResourcePath();
 
-  /// @brief Get the relative path of the Resources directory
-  /// @return The path
+  /**
+   * @brief Get the relative path of the Resources directory
+   *
+   * @return The path
+   */
   inline const std::string& get() { return path; }
 
 private:

@@ -1,0 +1,150 @@
+\hypertarget{classv0id_1_1Input}{}\doxysection{v0id\+::Input Class Reference}
+\label{classv0id_1_1Input}\index{v0id::Input@{v0id::Input}}
+
+
+Used to detect, store, and query user input.  
+
+
+
+
+{\ttfamily \#include $<$Input.\+hpp$>$}
+
+
+
+Collaboration diagram for v0id\+::Input\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=180pt]{classv0id_1_1Input__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum class \mbox{\hyperlink{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59}{Key}} \{ \newline
+\mbox{\hyperlink{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a6adf97f83acf6453d4a6a4b1070f3754}{None}} = 0
+, \mbox{\hyperlink{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a945d5e233cf7d6240f6b783b36a374ff}{Left}} = 1
+, \mbox{\hyperlink{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a92b09c7c48c520c3c55e497875da437c}{Right}} = 2
+, \mbox{\hyperlink{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a258f49887ef8d14ac268c92b02503aaa}{Up}} = 3
+, \newline
+\mbox{\hyperlink{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a08a38277b0309070706f6652eeae9a53}{Down}} = 4
+, \mbox{\hyperlink{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a91f4253ca587ca8ac4e63b9ceb351f5d}{Esc}} = 5
+ \}
+\begin{DoxyCompactList}\small\item\em Stores the value of the name of a key (or a collection of keys) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classv0id_1_1Input_a2caff4e5c567124622ce480fdd3377dc}\label{classv0id_1_1Input_a2caff4e5c567124622ce480fdd3377dc}} 
+void \mbox{\hyperlink{classv0id_1_1Input_a2caff4e5c567124622ce480fdd3377dc}{update}} ()
+\begin{DoxyCompactList}\small\item\em Update the state of the \mbox{\hyperlink{classv0id_1_1Input}{Input}} on each frame. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classv0id_1_1Input_af23046f4e78e963f51750c80d27e4a83}{is\+Key\+Pressed}} (\mbox{\hyperlink{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59}{Key}} key)
+\begin{DoxyCompactList}\small\item\em Determine whether a key is currently down. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classv0id_1_1Input_a523a61bdf173aefa7cbba16ffb5b5bfd}{is\+Key\+Down}} (\mbox{\hyperlink{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59}{Key}} key)
+\begin{DoxyCompactList}\small\item\em Determine whether a key was just pressed. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classv0id_1_1Input_ae5db08144f630caccaeafe24feadc392}{is\+Key\+Up}} (\mbox{\hyperlink{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59}{Key}} key)
+\begin{DoxyCompactList}\small\item\em Determine whether a key was just released. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Used to detect, store, and query user input. 
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59}\label{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59}} 
+\index{v0id::Input@{v0id::Input}!Key@{Key}}
+\index{Key@{Key}!v0id::Input@{v0id::Input}}
+\doxysubsubsection{\texorpdfstring{Key}{Key}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59}{v0id\+::\+Input\+::\+Key}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+
+
+Stores the value of the name of a key (or a collection of keys) 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{None@{None}!v0id::Input@{v0id::Input}}\index{v0id::Input@{v0id::Input}!None@{None}}}\mbox{\Hypertarget{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a6adf97f83acf6453d4a6a4b1070f3754}\label{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a6adf97f83acf6453d4a6a4b1070f3754}} 
+None&No keys. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Left@{Left}!v0id::Input@{v0id::Input}}\index{v0id::Input@{v0id::Input}!Left@{Left}}}\mbox{\Hypertarget{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a945d5e233cf7d6240f6b783b36a374ff}\label{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a945d5e233cf7d6240f6b783b36a374ff}} 
+Left&Either A or the left arrow key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Right@{Right}!v0id::Input@{v0id::Input}}\index{v0id::Input@{v0id::Input}!Right@{Right}}}\mbox{\Hypertarget{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a92b09c7c48c520c3c55e497875da437c}\label{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a92b09c7c48c520c3c55e497875da437c}} 
+Right&Either D or the right arrow key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Up@{Up}!v0id::Input@{v0id::Input}}\index{v0id::Input@{v0id::Input}!Up@{Up}}}\mbox{\Hypertarget{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a258f49887ef8d14ac268c92b02503aaa}\label{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a258f49887ef8d14ac268c92b02503aaa}} 
+Up&Either W or the up arrow key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Down@{Down}!v0id::Input@{v0id::Input}}\index{v0id::Input@{v0id::Input}!Down@{Down}}}\mbox{\Hypertarget{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a08a38277b0309070706f6652eeae9a53}\label{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a08a38277b0309070706f6652eeae9a53}} 
+Down&Either S or the down arrow key. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Esc@{Esc}!v0id::Input@{v0id::Input}}\index{v0id::Input@{v0id::Input}!Esc@{Esc}}}\mbox{\Hypertarget{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a91f4253ca587ca8ac4e63b9ceb351f5d}\label{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a91f4253ca587ca8ac4e63b9ceb351f5d}} 
+Esc&The escape key. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classv0id_1_1Input_a523a61bdf173aefa7cbba16ffb5b5bfd}\label{classv0id_1_1Input_a523a61bdf173aefa7cbba16ffb5b5bfd}} 
+\index{v0id::Input@{v0id::Input}!isKeyDown@{isKeyDown}}
+\index{isKeyDown@{isKeyDown}!v0id::Input@{v0id::Input}}
+\doxysubsubsection{\texorpdfstring{isKeyDown()}{isKeyDown()}}
+{\footnotesize\ttfamily bool v0id\+::\+Input\+::is\+Key\+Down (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59}{Key}}}]{key }\end{DoxyParamCaption})}
+
+
+
+Determine whether a key was just pressed. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the key was just pressed 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv0id_1_1Input_af23046f4e78e963f51750c80d27e4a83}\label{classv0id_1_1Input_af23046f4e78e963f51750c80d27e4a83}} 
+\index{v0id::Input@{v0id::Input}!isKeyPressed@{isKeyPressed}}
+\index{isKeyPressed@{isKeyPressed}!v0id::Input@{v0id::Input}}
+\doxysubsubsection{\texorpdfstring{isKeyPressed()}{isKeyPressed()}}
+{\footnotesize\ttfamily bool v0id\+::\+Input\+::is\+Key\+Pressed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59}{Key}}}]{key }\end{DoxyParamCaption})}
+
+
+
+Determine whether a key is currently down. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the key is currently down 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv0id_1_1Input_ae5db08144f630caccaeafe24feadc392}\label{classv0id_1_1Input_ae5db08144f630caccaeafe24feadc392}} 
+\index{v0id::Input@{v0id::Input}!isKeyUp@{isKeyUp}}
+\index{isKeyUp@{isKeyUp}!v0id::Input@{v0id::Input}}
+\doxysubsubsection{\texorpdfstring{isKeyUp()}{isKeyUp()}}
+{\footnotesize\ttfamily bool v0id\+::\+Input\+::is\+Key\+Up (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59}{Key}}}]{key }\end{DoxyParamCaption})}
+
+
+
+Determine whether a key was just released. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & The key \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the key was just released 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/v0idengine/\+Core/Input.\+hpp\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="v0id::component::KeyboardMovement" name="v0id::component::KeyboardMovement">
+<area shape="rect" id="node1" title="Lets the player move an Object up, down, left, and right." alt="" coords="5,448,205,584"/>
+<area shape="rect" id="node2" href="$classv0id_1_1Component.html" title="Abstract base class for v0idengine components." alt="" coords="39,248,172,399"/>
+<area shape="rect" id="node3" href="$classv0id_1_1Object.html" title="A collection of components that, together, form a game entity." alt="" coords="32,5,179,185"/>
+</map>

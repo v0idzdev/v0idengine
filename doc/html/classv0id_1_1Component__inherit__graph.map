@@ -1,0 +1,6 @@
+<map id="v0id::Component" name="v0id::Component">
+<area shape="rect" id="node1" title="Abstract base class for v0idengine components." alt="" coords="252,5,385,156"/>
+<area shape="rect" id="node2" href="$classv0id_1_1component_1_1KeyboardMovement.html" title="Lets the player move an Object up, down, left, and right." alt="" coords="5,248,205,384"/>
+<area shape="rect" id="node3" href="$classv0id_1_1component_1_1Sprite.html" title="A renderable image to be added to an Object." alt="" coords="230,255,407,377"/>
+<area shape="rect" id="node4" href="$classv0id_1_1component_1_1Transform.html" title="Stores and modifies the position, rotation, and scale of an Object." alt="" coords="431,204,635,428"/>
+</map>

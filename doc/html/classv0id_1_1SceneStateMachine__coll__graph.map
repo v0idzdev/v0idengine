@@ -1,0 +1,3 @@
+<map id="v0id::SceneStateMachine" name="v0id::SceneStateMachine">
+<area shape="rect" id="node1" title="Used to store each scene in the game and transition between them." alt="" coords="5,5,192,200"/>
+</map>

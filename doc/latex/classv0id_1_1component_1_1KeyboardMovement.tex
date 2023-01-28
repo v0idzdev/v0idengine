@@ -1,0 +1,121 @@
+\hypertarget{classv0id_1_1component_1_1KeyboardMovement}{}\doxysection{v0id\+::component\+::Keyboard\+Movement Class Reference}
+\label{classv0id_1_1component_1_1KeyboardMovement}\index{v0id::component::KeyboardMovement@{v0id::component::KeyboardMovement}}
+
+
+Lets the player move an \mbox{\hyperlink{classv0id_1_1Object}{Object}} up, down, left, and right.  
+
+
+
+
+{\ttfamily \#include $<$Keyboard\+Movement.\+hpp$>$}
+
+
+
+Inheritance diagram for v0id\+::component\+::Keyboard\+Movement\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classv0id_1_1component_1_1KeyboardMovement__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for v0id\+::component\+::Keyboard\+Movement\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classv0id_1_1component_1_1KeyboardMovement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classv0id_1_1component_1_1KeyboardMovement_a3c8a7e4640ec9aa76ad9003bc5ffb774}{Keyboard\+Movement}} (\mbox{\hyperlink{classv0id_1_1Object}{Object}} $\ast$owner)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classv0id_1_1component_1_1KeyboardMovement}{Keyboard\+Movement}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1component_1_1KeyboardMovement_a43d8df7094f9f9d9e99d9a7cf589833f}{set\+Input}} (\mbox{\hyperlink{classv0id_1_1Input}{Input}} $\ast$input)
+\begin{DoxyCompactList}\small\item\em Set the \mbox{\hyperlink{classv0id_1_1Input}{Input}} instance used to detect, store, and control input. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1component_1_1KeyboardMovement_a3e0a7839f1e622e630793151f6fb1ac6}{set\+Movement\+Speed}} (int move\+Speed)
+\begin{DoxyCompactList}\small\item\em Set the movement speed of the \mbox{\hyperlink{classv0id_1_1Object}{Object}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1component_1_1KeyboardMovement_afff72d91cdcabbd849d9e1ad3f9b8860}{update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Update the state of the \mbox{\hyperlink{classv0id_1_1component_1_1KeyboardMovement}{Keyboard\+Movement}} on each frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+Lets the player move an \mbox{\hyperlink{classv0id_1_1Object}{Object}} up, down, left, and right. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classv0id_1_1component_1_1KeyboardMovement_a3c8a7e4640ec9aa76ad9003bc5ffb774}\label{classv0id_1_1component_1_1KeyboardMovement_a3c8a7e4640ec9aa76ad9003bc5ffb774}} 
+\index{v0id::component::KeyboardMovement@{v0id::component::KeyboardMovement}!KeyboardMovement@{KeyboardMovement}}
+\index{KeyboardMovement@{KeyboardMovement}!v0id::component::KeyboardMovement@{v0id::component::KeyboardMovement}}
+\doxysubsubsection{\texorpdfstring{KeyboardMovement()}{KeyboardMovement()}}
+{\footnotesize\ttfamily v0id\+::component\+::\+Keyboard\+Movement\+::\+Keyboard\+Movement (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classv0id_1_1Object}{Object}} $\ast$}]{owner }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classv0id_1_1component_1_1KeyboardMovement}{Keyboard\+Movement}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & The \mbox{\hyperlink{classv0id_1_1Object}{Object}} to add the \mbox{\hyperlink{classv0id_1_1component_1_1KeyboardMovement}{Keyboard\+Movement}} to \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classv0id_1_1component_1_1KeyboardMovement_a43d8df7094f9f9d9e99d9a7cf589833f}\label{classv0id_1_1component_1_1KeyboardMovement_a43d8df7094f9f9d9e99d9a7cf589833f}} 
+\index{v0id::component::KeyboardMovement@{v0id::component::KeyboardMovement}!setInput@{setInput}}
+\index{setInput@{setInput}!v0id::component::KeyboardMovement@{v0id::component::KeyboardMovement}}
+\doxysubsubsection{\texorpdfstring{setInput()}{setInput()}}
+{\footnotesize\ttfamily void v0id\+::component\+::\+Keyboard\+Movement\+::set\+Input (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classv0id_1_1Input}{Input}} $\ast$}]{input }\end{DoxyParamCaption})}
+
+
+
+Set the \mbox{\hyperlink{classv0id_1_1Input}{Input}} instance used to detect, store, and control input. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & The \mbox{\hyperlink{classv0id_1_1Input}{Input}} instance \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classv0id_1_1component_1_1KeyboardMovement_a3e0a7839f1e622e630793151f6fb1ac6}\label{classv0id_1_1component_1_1KeyboardMovement_a3e0a7839f1e622e630793151f6fb1ac6}} 
+\index{v0id::component::KeyboardMovement@{v0id::component::KeyboardMovement}!setMovementSpeed@{setMovementSpeed}}
+\index{setMovementSpeed@{setMovementSpeed}!v0id::component::KeyboardMovement@{v0id::component::KeyboardMovement}}
+\doxysubsubsection{\texorpdfstring{setMovementSpeed()}{setMovementSpeed()}}
+{\footnotesize\ttfamily void v0id\+::component\+::\+Keyboard\+Movement\+::set\+Movement\+Speed (\begin{DoxyParamCaption}\item[{int}]{move\+Speed }\end{DoxyParamCaption})}
+
+
+
+Set the movement speed of the \mbox{\hyperlink{classv0id_1_1Object}{Object}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em move\+Speed} & The movement speed in pixels per second \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classv0id_1_1component_1_1KeyboardMovement_afff72d91cdcabbd849d9e1ad3f9b8860}\label{classv0id_1_1component_1_1KeyboardMovement_afff72d91cdcabbd849d9e1ad3f9b8860}} 
+\index{v0id::component::KeyboardMovement@{v0id::component::KeyboardMovement}!update@{update}}
+\index{update@{update}!v0id::component::KeyboardMovement@{v0id::component::KeyboardMovement}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void v0id\+::component\+::\+Keyboard\+Movement\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Update the state of the \mbox{\hyperlink{classv0id_1_1component_1_1KeyboardMovement}{Keyboard\+Movement}} on each frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The number of seconds since the last frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classv0id_1_1Component_ae690020eb8b8b07432d17ac7940d0385}{v0id\+::\+Component}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/v0idengine/\+ECS/Keyboard\+Movement.\+hpp\end{DoxyCompactItemize}

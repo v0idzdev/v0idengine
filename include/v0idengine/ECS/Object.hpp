@@ -9,34 +9,58 @@
 
 namespace v0id {
 
-/// @brief A collection of components that, together, form a game entity
+/**
+ * @brief A collection of components that, together, form a game entity
+ *
+ */
 class Object
 {
 public:
-  /// @brief Create a new Object
+  /**
+   * @brief Construct a new Object object
+   *
+   */
   Object();
 
-  /// @brief Called when the Object is created
+  /**
+   * @brief Called when the Object is created
+   *
+   */
   void awake();
 
-  /// @brief Called after the awake method
+  /**
+   * @brief Called after the awake method
+   *
+   */
   void start();
 
-  /// @brief Call the update method of each component on each frame
-  /// @param deltaTime The number of seconds since the last frame
+  /**
+   * @brief Call the update method of each component on each frame
+   *
+   * @param deltaTime The number of seconds since the last frame
+   */
   void update(float deltaTime);
 
-  /// @brief Call the lateUpdate method of each component on each frame
-  /// @param deltaTime The number of seconds since the last frame
+  /**
+   * @brief Call the lateUpdate method of each component on each frame
+   *
+   * @param deltaTime The number of seconds since the last frame
+   */
   void lateUpdate(float deltaTime);
 
-  /// @brief Call the draw method of each component on each frame
-  /// @param window A window used to display drawables
+  /**
+   * @brief Call the draw method of each component on each frame
+   *
+   * @param window A window used to display drawables
+   */
   void draw(Window& window);
 
-  /// @brief Add a new component to the Object
-  /// @tparam T The component to add
-  /// @return An instance of the added component
+  /**
+   * @brief Add a new component to the Object
+   *
+   * @tparam T The component to add
+   * @return An pointer to the instance of the added component
+   */
   template<typename T>
   std::shared_ptr<T> addComponent()
   {
@@ -53,9 +77,13 @@ public:
     return newComponent;
   }
 
-  /// @brief Get an existing component that was added to the Object
-  /// @tparam T The component to get
-  /// @return The instance of the component, or nullptr if not found
+  /**
+   * @brief Get an existing component that was added to the Object
+   *
+   * @tparam T The component to get
+   * @return An pointer to the instance of the added component, or nullptr if
+   * not found
+   */
   template<typename T>
   std::shared_ptr<T> getComponent()
   {

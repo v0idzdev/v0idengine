@@ -1,0 +1,140 @@
+\hypertarget{classv0id_1_1Component}{}\doxysection{v0id\+::Component Class Reference}
+\label{classv0id_1_1Component}\index{v0id::Component@{v0id::Component}}
+
+
+Abstract base class for v0idengine components.  
+
+
+
+
+{\ttfamily \#include $<$Component.\+hpp$>$}
+
+
+
+Inheritance diagram for v0id\+::Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classv0id_1_1Component__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for v0id\+::Component\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{classv0id_1_1Component__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classv0id_1_1Component_a8192edbae9796b215af4835873df8a8b}{Component}} (\mbox{\hyperlink{classv0id_1_1Object}{Object}} $\ast$owner)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classv0id_1_1Component}{Component}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv0id_1_1Component_a2a73cf99e31fa125d857f9999d979aa9}\label{classv0id_1_1Component_a2a73cf99e31fa125d857f9999d979aa9}} 
+virtual void \mbox{\hyperlink{classv0id_1_1Component_a2a73cf99e31fa125d857f9999d979aa9}{awake}} ()
+\begin{DoxyCompactList}\small\item\em Called when the \mbox{\hyperlink{classv0id_1_1Component}{Component}} is created. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv0id_1_1Component_a7dea398b1670f0ef2618f9acdc173b16}\label{classv0id_1_1Component_a7dea398b1670f0ef2618f9acdc173b16}} 
+virtual void \mbox{\hyperlink{classv0id_1_1Component_a7dea398b1670f0ef2618f9acdc173b16}{start}} ()
+\begin{DoxyCompactList}\small\item\em Called after the awake method. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classv0id_1_1Component_ae690020eb8b8b07432d17ac7940d0385}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Update this or other Components on each frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classv0id_1_1Component_a0aefc328efd1d14311f704dff4afe108}{late\+Update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Update this or other Components after each frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classv0id_1_1Component_aedacffaf5de30cc20fba1a504a67bc0f}{draw}} (\mbox{\hyperlink{classv0id_1_1Window}{Window}} \&window)
+\begin{DoxyCompactList}\small\item\em Draw the component to the window. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classv0id_1_1Component_a94eea6e010b480c362827d4ba9b05f93}\label{classv0id_1_1Component_a94eea6e010b480c362827d4ba9b05f93}} 
+\mbox{\hyperlink{classv0id_1_1Object}{Object}} $\ast$ {\bfseries owner}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract base class for v0idengine components. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classv0id_1_1Component_a8192edbae9796b215af4835873df8a8b}\label{classv0id_1_1Component_a8192edbae9796b215af4835873df8a8b}} 
+\index{v0id::Component@{v0id::Component}!Component@{Component}}
+\index{Component@{Component}!v0id::Component@{v0id::Component}}
+\doxysubsubsection{\texorpdfstring{Component()}{Component()}}
+{\footnotesize\ttfamily v0id\+::\+Component\+::\+Component (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classv0id_1_1Object}{Object}} $\ast$}]{owner }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Construct a new \mbox{\hyperlink{classv0id_1_1Component}{Component}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & The \mbox{\hyperlink{classv0id_1_1Object}{Object}} to add the component to \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classv0id_1_1Component_aedacffaf5de30cc20fba1a504a67bc0f}\label{classv0id_1_1Component_aedacffaf5de30cc20fba1a504a67bc0f}} 
+\index{v0id::Component@{v0id::Component}!draw@{draw}}
+\index{draw@{draw}!v0id::Component@{v0id::Component}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void v0id\+::\+Component\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classv0id_1_1Window}{Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Draw the component to the window. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & A window used to display drawables \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classv0id_1_1component_1_1Sprite_aed8f4ce4da5bf678c9fc1d176885e449}{v0id\+::component\+::\+Sprite}}.
+
+\mbox{\Hypertarget{classv0id_1_1Component_a0aefc328efd1d14311f704dff4afe108}\label{classv0id_1_1Component_a0aefc328efd1d14311f704dff4afe108}} 
+\index{v0id::Component@{v0id::Component}!lateUpdate@{lateUpdate}}
+\index{lateUpdate@{lateUpdate}!v0id::Component@{v0id::Component}}
+\doxysubsubsection{\texorpdfstring{lateUpdate()}{lateUpdate()}}
+{\footnotesize\ttfamily virtual void v0id\+::\+Component\+::late\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Update this or other Components after each frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The number of seconds since the last frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classv0id_1_1component_1_1Sprite_a8293aba6e9ad9e4030045f59f46c1056}{v0id\+::component\+::\+Sprite}}.
+
+\mbox{\Hypertarget{classv0id_1_1Component_ae690020eb8b8b07432d17ac7940d0385}\label{classv0id_1_1Component_ae690020eb8b8b07432d17ac7940d0385}} 
+\index{v0id::Component@{v0id::Component}!update@{update}}
+\index{update@{update}!v0id::Component@{v0id::Component}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void v0id\+::\+Component\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Update this or other Components on each frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The number of seconds since the last frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \mbox{\hyperlink{classv0id_1_1component_1_1KeyboardMovement_afff72d91cdcabbd849d9e1ad3f9b8860}{v0id\+::component\+::\+Keyboard\+Movement}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/v0idengine/\+ECS/Component.\+hpp\end{DoxyCompactItemize}

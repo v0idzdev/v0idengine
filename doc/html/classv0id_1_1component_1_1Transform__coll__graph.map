@@ -1,0 +1,5 @@
+<map id="v0id::component::Transform" name="v0id::component::Transform">
+<area shape="rect" id="node1" title="Stores and modifies the position, rotation, and scale of an Object." alt="" coords="5,448,209,672"/>
+<area shape="rect" id="node2" href="$classv0id_1_1Component.html" title="Abstract base class for v0idengine components." alt="" coords="41,248,174,399"/>
+<area shape="rect" id="node3" href="$classv0id_1_1Object.html" title="A collection of components that, together, form a game entity." alt="" coords="34,5,181,185"/>
+</map>
