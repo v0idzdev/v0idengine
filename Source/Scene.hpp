@@ -5,26 +5,35 @@
 
 namespace v0id {
 
-// Abstract base class describing a scene
+// Abstract class that user-created Scenes will override to construct a game
 class Scene
 {
 public:
-  // Called when initially created. Called once per scene
+  /// @brief Called once when the Scene is created
   virtual void onCreate() = 0;
-  // Called when scene destroyed. Called once per scene
+
+  /// @brief Called once when the Scene is destroyed
   virtual void onDestroy() = 0;
-  // Called whenever a scene is activated
+
+  /// @brief Called each time the Scene is activated
   virtual void onActivate(){};
-  // Called whenever a scene is deactivated
+
+  /// @brief Called each time the Scene is deactivated
   virtual void onDeactivate(){};
 
-  // Scene input handling goes here
+  /// @brief Contains the input management code for the Scene
   virtual void processInput(){};
-  // Scene update code goes here
+
+  /// @brief Update the state of the Scene on each frame
+  /// @param deltaTime The number of seconds since the last frame
   virtual void update(float deltaTime){};
-  // Scene post-update code goes here
+
+  /// @brief Update the state of the Scene after each frame
+  /// @param deltaTime The number of seconds since the last frame
   virtual void lateUpdate(float deltaTime){};
-  // Scene drawing code goes here
+
+  /// @brief Render renderables in the Scene
+  /// @param window A window
   virtual void draw(Window& window){};
 };
 
