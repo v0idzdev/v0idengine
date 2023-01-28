@@ -1,0 +1,12 @@
+prefix=/usr/local
+exec_prefix=/usr/local
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: v0idengine
+Description: A minimal 2D game engine
+Version: 0.1.0
+
+Requires:
+Libs: -L${libdir} -lv0idengine
+Cflags: -I${includedir}

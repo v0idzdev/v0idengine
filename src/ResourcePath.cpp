@@ -4,7 +4,7 @@ namespace v0id {
 
 ResourcePath::ResourcePath()
 {
-  path = "./Resources/";
+  path = "./resources/";
 
 #ifdef MACOS
   CFBundleRef mainBundle = CFBundleGetMainBundle();
