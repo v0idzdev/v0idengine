@@ -46,3 +46,10 @@ _deps
 
 # pkg-config
 *.pc
+
+# .vscode
+.vscode
+
+# Shared object files
+.so
+.so.*
