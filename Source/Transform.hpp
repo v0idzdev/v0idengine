@@ -1,5 +1,5 @@
-#ifndef C_Transform_hpp
-#define C_Transform_hpp
+#ifndef TRANSFORM_HPP
+#define TRANSFORM_HPP
 
 #include "Component.hpp"
 

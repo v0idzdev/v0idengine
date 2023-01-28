@@ -1,5 +1,5 @@
-#ifndef RESOURCEPATH_HPP
-#define RESOURCEPATH_HPP
+#ifndef RESOURCE_PATH_HPP
+#define RESOURCE_PATH_HPP
 
 #include <string>
 

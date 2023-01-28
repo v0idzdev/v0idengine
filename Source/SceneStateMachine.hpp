@@ -1,5 +1,5 @@
-#ifndef SCENESTATEMACHINE_HPP
-#define SCENESTATEMACHINE_HPP
+#ifndef SCENE_STATE_MACHINE_HPP
+#define SCENE_STATE_MACHINE_HPP
 
 #include "EnumHash.hpp"
 #include "Scene.hpp"
