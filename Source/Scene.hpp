@@ -32,8 +32,8 @@ public:
   /// @param deltaTime The number of seconds since the last frame
   virtual void lateUpdate(float deltaTime){};
 
-  /// @brief Render renderables in the Scene
-  /// @param window A window
+  /// @brief Draw drawables in the Scene
+  /// @param window The Window used to draw drawables
   virtual void draw(Window& window){};
 };
 
