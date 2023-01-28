@@ -10,18 +10,16 @@ SceneLevel::~SceneLevel() {}
 void
 SceneLevel::onCreate()
 {
-  // TODO: Load content
-
-  // Create player
+  // Create entity
   player = std::make_shared<v0id::Object>();
-
-  // Add sprite component
   auto sprite = player->addComponent<v0id::component::Sprite>();
-  sprite->load(resourcePath.get() + "car.png");
+  auto controller = player->addComponent<CarMovement>();
+  auto transform = player->getComponent<v0id::component::Transform>();
 
-  // Add input component
-  auto movement = player->addComponent<v0id::component::KeyboardMovement>();
-  movement->setInput(&input); // Set the Input instance to use
+  // Init components
+  sprite->load(resourcePath.get() + "car.png");
+  controller->setInput(&input);
+  transform->setPosition(400, 300);
 }
 
 void

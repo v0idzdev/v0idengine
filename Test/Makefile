@@ -10,7 +10,7 @@ LIBS        = -lv0idengine -lsfml-graphics -lsfml-window -lsfml-system
 
 # Add source and header files here
 SRCFILES    = Main.cpp $(patsubst %, $(SRCDIR)/%, Game.cpp SceneLevel.cpp \
-	SceneSplashScreen.cpp)
+	SceneSplashScreen.cpp CarMovement.cpp)
 OBJFILES    = $(SRCFILES:.cpp=.o)
 
 all: $(TARGET) clean
