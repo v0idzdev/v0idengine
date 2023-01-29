@@ -25,18 +25,18 @@
 var NAVTREE =
 [
   [ "v0idengine", "index.html", [
-    [ "//v0idengine", "index.html", [
-      [ "API", "index.html#autotoc_md2", [
-        [ "Getting started", "index.html#autotoc_md1", null ],
-        [ "Scenes", "index.html#autotoc_md3", [
-          [ "Creating scenes", "index.html#autotoc_md4", null ],
-          [ "Adding scenes", "index.html#autotoc_md5", null ],
-          [ "Switching scenes", "index.html#autotoc_md6", null ],
-          [ "Removing scenes", "index.html#autotoc_md7", null ]
+    [ "// v0idengine", "index.html", [
+      [ "Getting Started", "index.html#autotoc_md1", [
+        [ "Installing the Engine", "index.html#autotoc_md2", [
+          [ "Linux", "index.html#autotoc_md3", null ],
+          [ "Windows 10/11", "index.html#autotoc_md4", null ]
         ] ],
-        [ "Objects and components", "index.html#autotoc_md8", [
-          [ "Creating an object", "index.html#autotoc_md9", null ],
-          [ "Adding Components", "index.html#autotoc_md10", null ]
+        [ "Creating a new Game", "index.html#autotoc_md5", [
+          [ "Creating a Project Generation Script", "index.html#autotoc_md6", null ]
+        ] ],
+        [ "Building and Running the Game", "index.html#autotoc_md7", [
+          [ "Linux", "index.html#autotoc_md8", null ],
+          [ "Windows 10/11", "index.html#autotoc_md9", null ]
         ] ]
       ] ]
     ] ],

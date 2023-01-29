@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>v0idengine: //v0idengine</title>
+<title>v0idengine: // v0idengine</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -87,324 +87,94 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 
 <div class="PageDoc"><div class="header">
   <div class="headertitle">
-<div class="title">//v0idengine </div>  </div>
+<div class="title">// v0idengine </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a>A lightweight game engine for small 2D titles, with minimal overhead.</p>
-<h2><a class="anchor" id="autotoc_md1"></a>
-Getting started</h2>
-<p>Windows is not supported yet. These instructions are for Linux.</p>
-<ol type="1">
-<li>Install <div class="fragment"><div class="line">git clone https://github.com/matthewflegg/v0idengine</div>
-<div class="line">cd v0idengine</div>
-<div class="line">sudo make install</div>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> A lightweight game engine for 2D titles, with minimal overhead.</p>
+<h1><a class="anchor" id="autotoc_md1"></a>
+Getting Started</h1>
+<h2><a class="anchor" id="autotoc_md2"></a>
+Installing the Engine</h2>
+<h3><a class="anchor" id="autotoc_md3"></a>
+Linux</h3>
+<ul>
+<li>Install dependencies</li>
+</ul>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Distribution   </th><th class="markdownTableHeadNone">Package Manager   </th><th class="markdownTableHeadNone">Required Packages    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Arch   </td><td class="markdownTableBodyNone"><code>pacman</code>   </td><td class="markdownTableBodyNone"><code>git</code> <code>cmake</code> <code>base-devel</code> <code>sfml</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Debian   </td><td class="markdownTableBodyNone"><code>apt</code>   </td><td class="markdownTableBodyNone"><code>git</code> <code>cmake</code> <code>build-essential</code> <code>libsfml-dev</code>    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">Fedora*   </td><td class="markdownTableBodyNone"><code>dnf</code>   </td><td class="markdownTableBodyNone"><code>git-all</code> <code>cmake</code> <code>sfml-dev</code>    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Red Hat**   </td><td class="markdownTableBodyNone"><code>rpm</code>   </td><td class="markdownTableBodyNone"><code>git</code> <code>cmake</code> <code>sfml-dev</code>   </td></tr>
+</table>
+<p><code>*</code> — On Fedora, the following command must be executed: </p><div class="fragment"><div class="line">dnf group install &quot;C Development Tools and Libraries&quot; &quot;Development Tools&quot;</div>
+</div><!-- fragment --><p> <code>**</code> — On Red Hat, the following command must be executed: </p><div class="fragment"><div class="line">yum groupinstall &quot;Development Tools&quot; </div>
+</div><!-- fragment --><ul>
+<li>Clone <code>v0idengine</code> <div class="fragment"><div class="line">git clone https://github.com/v0idzdev/v0idengine</div>
+<div class="line">cd v0idengine/</div>
 </div><!-- fragment --></li>
-<li>Create project <div class="fragment"><div class="line">mkdir MyGame/{Source,Resources}</div>
-<div class="line">cd MyGame</div>
-<div class="line">touch Main.cpp Source/{Game.cpp,Game.hpp,SceneLevel.cpp,SceneLevel.hpp} Makefile</div>
+<li>Build and install <code>v0idengine</code> <div class="fragment"><div class="line">cmake .</div>
+<div class="line">make install</div>
 </div><!-- fragment --></li>
-<li>Add boilerplate</li>
-</ol>
-<p><code>Main.cpp</code> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;Source/Game.hpp&quot;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">int</span> main() {</div>
-<div class="line">  Game game;</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordflow">while</span> (game.isRunning()) {</div>
-<div class="line">    game.captureInput();</div>
-<div class="line">    game.update();</div>
-<div class="line">    game.lateUpdate();</div>
-<div class="line">    game.draw();</div>
-<div class="line">    game.calculateDeltaTime();</div>
-<div class="line">  }</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordflow">return</span> 0;</div>
-<div class="line">}</div>
-</div><!-- fragment --><p> <code>Source/Game.hpp</code> </p><div class="fragment"><div class="line"><span class="preprocessor">#ifndef GAME_HPP</span></div>
-<div class="line"><span class="preprocessor">#define GAME_HPP</span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &quot;SceneLevel.hpp&quot;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;v0idengine/Input.hpp&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;v0idengine/ResourcePath.hpp&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;v0idengine/SceneStateMachine.hpp&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;v0idengine/Window.hpp&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>Game</div>
-<div class="line">{</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  <span class="comment">// Create a new game instance</span></div>
-<div class="line">  Game();</div>
-<div class="line">  ~Game();</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordtype">void</span> captureInput();</div>
-<div class="line">  <span class="keywordtype">void</span> update();</div>
-<div class="line">  <span class="keywordtype">void</span> lateUpdate();</div>
-<div class="line">  <span class="keywordtype">void</span> draw();</div>
-<div class="line">  <span class="keywordtype">void</span> calculateDeltaTime();</div>
-<div class="line">  <span class="keywordtype">bool</span> isRunning() <span class="keyword">const</span>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <a class="code" href="classv0id_1_1Window.html">v0id::Window</a> window;</div>
-<div class="line">  <a class="code" href="classv0id_1_1ResourcePath.html">v0id::ResourcePath</a> resourcePath;</div>
-<div class="line">  <a class="code" href="classv0id_1_1Input.html">v0id::Input</a> input;</div>
-<div class="line">  <a class="code" href="classv0id_1_1SceneStateMachine.html">v0id::SceneStateMachine</a> sceneManager;</div>
-<div class="line"> </div>
-<div class="line">  sf::Clock clock;</div>
-<div class="line">  <span class="keywordtype">float</span> deltaTime;</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassv0id_1_1Input_html"><div class="ttname"><a href="classv0id_1_1Input.html">v0id::Input</a></div><div class="ttdoc">Used to detect, store, and query user input.</div><div class="ttdef"><b>Definition:</b> Input.hpp:14</div></div>
-<div class="ttc" id="aclassv0id_1_1ResourcePath_html"><div class="ttname"><a href="classv0id_1_1ResourcePath.html">v0id::ResourcePath</a></div><div class="ttdoc">Stores the location of the Resources directory.</div><div class="ttdef"><b>Definition:</b> ResourcePath.hpp:17</div></div>
-<div class="ttc" id="aclassv0id_1_1SceneStateMachine_html"><div class="ttname"><a href="classv0id_1_1SceneStateMachine.html">v0id::SceneStateMachine</a></div><div class="ttdoc">Used to store each scene in the game and transition between them.</div><div class="ttdef"><b>Definition:</b> SceneStateMachine.hpp:17</div></div>
-<div class="ttc" id="aclassv0id_1_1Window_html"><div class="ttname"><a href="classv0id_1_1Window.html">v0id::Window</a></div><div class="ttdoc">Represents the display window and draws drawables on it.</div><div class="ttdef"><b>Definition:</b> Window.hpp:13</div></div>
-</div><!-- fragment --><p> <code>Source/Game.cpp</code> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;Game.hpp&quot;</span></div>
-<div class="line"> </div>
-<div class="line">Game::Game()</div>
-<div class="line">  : window(<span class="stringliteral">&quot;My Game&quot;</span>)</div>
-<div class="line">{</div>
-<div class="line">  <span class="comment">// TODO: Add your scenes here</span></div>
-<div class="line">  </div>
-<div class="line">  std::shared_ptr&lt;SceneLevel&gt; level =</div>
-<div class="line">    std::make_shared&lt;SceneLevel&gt;(resourcePath);</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <span class="keywordtype">id</span> = sceneManager.add(level);</div>
-<div class="line">  sceneManager.switchTo(<span class="keywordtype">id</span>);</div>
-<div class="line"> </div>
-<div class="line">  <span class="comment">// TODO: Add additional loading code here</span></div>
-<div class="line"> </div>
-<div class="line">  deltaTime = clock.restart().asSeconds();</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line">Game::~Game() {}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span></div>
-<div class="line">Game::captureInput()</div>
-<div class="line">{</div>
-<div class="line">  sceneManager.processInput();</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span></div>
-<div class="line">Game::update()</div>
-<div class="line">{</div>
-<div class="line">  window.update();</div>
-<div class="line">  sceneManager.update(deltaTime);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span></div>
-<div class="line">Game::lateUpdate()</div>
-<div class="line">{</div>
-<div class="line">  sceneManager.lateUpdate(deltaTime);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span></div>
-<div class="line">Game::draw()</div>
-<div class="line">{</div>
-<div class="line">  window.beginDraw();</div>
-<div class="line">  sceneManager.draw(window);</div>
-<div class="line">  window.endDraw();</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span></div>
-<div class="line">Game::calculateDeltaTime()</div>
-<div class="line">{</div>
-<div class="line">  deltaTime = clock.restart().asSeconds();</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">bool</span></div>
-<div class="line">Game::isRunning()<span class="keyword"> const</span></div>
-<div class="line"><span class="keyword"></span>{</div>
-<div class="line">  <span class="keywordflow">return</span> window.isOpen();</div>
-<div class="line">}</div>
-</div><!-- fragment --><p> <code>SceneLevel.hpp</code> </p><div class="fragment"><div class="line"><span class="preprocessor">#ifndef SCENELEVEL_HPP</span></div>
-<div class="line"><span class="preprocessor">#define SCENELEVEL_HPP</span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &lt;v0idengine/Input.hpp&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;v0idengine/ResourcePath.hpp&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;v0idengine/Scene.hpp&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>SceneLevel : <span class="keyword">public</span> <a class="code" href="classv0id_1_1Scene.html">v0id::Scene</a></div>
-<div class="line">{</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  SceneLevel(<a class="code" href="classv0id_1_1ResourcePath.html">v0id::ResourcePath</a>&amp; resourcePath);</div>
-<div class="line">  ~SceneLevel();</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code" href="classv0id_1_1Scene.html#afb82885468ef39cb5d8842dbe4fd3a57">onCreate</a>() <span class="keyword">override</span>;</div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code" href="classv0id_1_1Scene.html#aefcf964ee6371206de15b22b59e08e0c">onDestroy</a>() <span class="keyword">override</span>;</div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code" href="classv0id_1_1Scene.html#aecf2ba10548f80e137f83a2f1b1198a3">processInput</a>() <span class="keyword">override</span>;</div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code" href="classv0id_1_1Scene.html#a83d4baba95ead9c60d347f639cbf4444">update</a>(<span class="keywordtype">float</span> deltaTime) <span class="keyword">override</span>;</div>
-<div class="line">  <span class="keywordtype">void</span> <a class="code" href="classv0id_1_1Scene.html#ab9cdf3b4ecbac142aa6f7e485a2f685b">draw</a>(<a class="code" href="classv0id_1_1Window.html">v0id::Window</a>&amp; window) <span class="keyword">override</span>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <span class="comment">// TODO: Place sprites and scene variables here</span></div>
-<div class="line"> </div>
-<div class="line">  <a class="code" href="classv0id_1_1ResourcePath.html">v0id::ResourcePath</a>&amp; resourcePath;</div>
-<div class="line">  <a class="code" href="classv0id_1_1Input.html">v0id::Input</a> input;</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aclassv0id_1_1Scene_html"><div class="ttname"><a href="classv0id_1_1Scene.html">v0id::Scene</a></div><div class="ttdoc">Abstract class that user-created Scenes will override to construct a game.</div><div class="ttdef"><b>Definition:</b> Scene.hpp:14</div></div>
-<div class="ttc" id="aclassv0id_1_1Scene_html_a83d4baba95ead9c60d347f639cbf4444"><div class="ttname"><a href="classv0id_1_1Scene.html#a83d4baba95ead9c60d347f639cbf4444">v0id::Scene::update</a></div><div class="ttdeci">virtual void update(float deltaTime)</div><div class="ttdoc">Update the state of the Scene on each frame.</div><div class="ttdef"><b>Definition:</b> Scene.hpp:51</div></div>
-<div class="ttc" id="aclassv0id_1_1Scene_html_ab9cdf3b4ecbac142aa6f7e485a2f685b"><div class="ttname"><a href="classv0id_1_1Scene.html#ab9cdf3b4ecbac142aa6f7e485a2f685b">v0id::Scene::draw</a></div><div class="ttdeci">virtual void draw(Window &amp;window)</div><div class="ttdoc">Draw drawables in the Scene.</div><div class="ttdef"><b>Definition:</b> Scene.hpp:65</div></div>
-<div class="ttc" id="aclassv0id_1_1Scene_html_aecf2ba10548f80e137f83a2f1b1198a3"><div class="ttname"><a href="classv0id_1_1Scene.html#aecf2ba10548f80e137f83a2f1b1198a3">v0id::Scene::processInput</a></div><div class="ttdeci">virtual void processInput()</div><div class="ttdoc">Contains the input management code for the Scene.</div><div class="ttdef"><b>Definition:</b> Scene.hpp:44</div></div>
-<div class="ttc" id="aclassv0id_1_1Scene_html_aefcf964ee6371206de15b22b59e08e0c"><div class="ttname"><a href="classv0id_1_1Scene.html#aefcf964ee6371206de15b22b59e08e0c">v0id::Scene::onDestroy</a></div><div class="ttdeci">virtual void onDestroy()=0</div><div class="ttdoc">Called once when the Scene is destroyed.</div></div>
-<div class="ttc" id="aclassv0id_1_1Scene_html_afb82885468ef39cb5d8842dbe4fd3a57"><div class="ttname"><a href="classv0id_1_1Scene.html#afb82885468ef39cb5d8842dbe4fd3a57">v0id::Scene::onCreate</a></div><div class="ttdeci">virtual void onCreate()=0</div><div class="ttdoc">Called once when the Scene is created.</div></div>
-</div><!-- fragment --><p> <code>SceneLevel.cpp</code> </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;SceneLevel.hpp&quot;</span></div>
-<div class="line"> </div>
-<div class="line">SceneLevel::SceneLevel(<a class="code" href="classv0id_1_1ResourcePath.html">v0id::ResourcePath</a>&amp; resourcePath)</div>
-<div class="line">  : resourcePath(resourcePath)</div>
-<div class="line">{</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line">SceneLevel::~SceneLevel() {}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span></div>
-<div class="line">SceneLevel::onCreate()</div>
-<div class="line">{</div>
-<div class="line">  <span class="comment">// TODO: Load content</span></div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span></div>
-<div class="line">SceneLevel::onDestroy()</div>
-<div class="line">{</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span></div>
-<div class="line">SceneLevel::processInput()</div>
-<div class="line">{</div>
-<div class="line">  input.update();</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordflow">if</span> (input.isKeyPressed(<a class="code" href="classv0id_1_1Input.html#a54d843553e0f2edbe25e2ddd289eed59a91f4253ca587ca8ac4e63b9ceb351f5d">v0id::Input::Key::Esc</a>))</div>
-<div class="line">    exit(0);</div>
-<div class="line"> </div>
-<div class="line">  <span class="comment">// TODO: Process input</span></div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span></div>
-<div class="line">SceneLevel::update(<span class="keywordtype">float</span> deltaTime)</div>
-<div class="line">{</div>
-<div class="line">  <span class="comment">// TODO: Update state</span></div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span></div>
-<div class="line">SceneLevel::draw(<a class="code" href="classv0id_1_1Window.html">v0id::Window</a>&amp; window)</div>
-<div class="line">{</div>
-<div class="line">  <span class="comment">// TODO: Draw assets</span></div>
-<div class="line">}</div>
-<div class="ttc" id="aclassv0id_1_1Input_html_a54d843553e0f2edbe25e2ddd289eed59a91f4253ca587ca8ac4e63b9ceb351f5d"><div class="ttname"><a href="classv0id_1_1Input.html#a54d843553e0f2edbe25e2ddd289eed59a91f4253ca587ca8ac4e63b9ceb351f5d">v0id::Input::Key::Esc</a></div><div class="ttdeci">@ Esc</div><div class="ttdoc">The escape key.</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md2"></a>
-API</h1>
-<p>v0idengine works by creating a <code>Game</code> instance, which contains a <code>Window</code> (for rendering) and a <code>SceneStateMachine</code> (for switching scenes). Scenes will contain your update logic, drawing logic, and assets, while <code>Game</code> will contain your scene management code.</p>
-<h2><a class="anchor" id="autotoc_md3"></a>
-Scenes</h2>
+</ul>
 <h3><a class="anchor" id="autotoc_md4"></a>
-Creating scenes</h3>
-<p>Scenes are created by overriding <code>Scene</code>. Add your game logic in <code>update()</code>, drawing code in <code>draw()</code>, and assets as private variables. </p><div class="fragment"><div class="line"><span class="preprocessor">#ifndef MYSCENE_HPP</span></div>
-<div class="line"><span class="preprocessor">#define MYSCENE_HPP</span></div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#include &lt;v0idengine/Input.hpp&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;v0idengine/ResourcePath.hpp&gt;</span></div>
-<div class="line"><span class="preprocessor">#include &lt;v0idengine/Scene.hpp&gt;</span></div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>MyScene : <span class="keyword">public</span> Scene</div>
-<div class="line">{</div>
-<div class="line"><span class="keyword">public</span>:</div>
-<div class="line">  MyScene(ResourcePath&amp; resourcePath);</div>
-<div class="line">  ~MyScene();</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordtype">void</span> onCreate() <span class="keyword">override</span>;</div>
-<div class="line">  <span class="keywordtype">void</span> onDestroy() <span class="keyword">override</span>;</div>
-<div class="line">  <span class="keywordtype">void</span> processInput() <span class="keyword">override</span>;</div>
-<div class="line">  <span class="keywordtype">void</span> update(<span class="keywordtype">float</span> deltaTime) <span class="keyword">override</span>;</div>
-<div class="line">  <span class="keywordtype">void</span> draw(Window&amp; window) <span class="keyword">override</span>;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">private</span>:</div>
-<div class="line">  <span class="comment">// TODO: Place sprites and scene variables here</span></div>
-<div class="line"> </div>
-<div class="line">  ResourcePath&amp; resourcePath;</div>
-<div class="line">  Input input;</div>
-<div class="line">};</div>
-<div class="line"> </div>
-<div class="line"><span class="preprocessor">#endif</span></div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md5"></a>
-Adding scenes</h3>
-<p>Adding one looks like this: </p><div class="fragment"><div class="line">Game::Game()</div>
-<div class="line">  : window(<span class="stringliteral">&quot;My Game&quot;</span>)</div>
-<div class="line">{</div>
-<div class="line">  <span class="comment">// Create a shared pointer to your scene</span></div>
-<div class="line">  std::shared_ptr&lt;MyScene&gt; myScene =</div>
-<div class="line">    std::make_shared&lt;MyScene&gt;(resourcePath); </div>
-<div class="line">    </div>
-<div class="line">  <span class="comment">// Add the scene to the SceneStateMachine</span></div>
-<div class="line">  <span class="comment">// Its ID will be returned. You need this to switch to or remove the scene</span></div>
-<div class="line">  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mySceneID = sceneManager.add(myScene);</div>
-<div class="line">}</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md6"></a>
-Switching scenes</h3>
-<p>Scenes are referenced by their ID. Use it to switch to a scene </p><div class="fragment"><div class="line">{</div>
-<div class="line">  ...</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Switch to the scene using the ID</span></div>
-<div class="line">  sceneManager.switchTo(mySceneID);</div>
-<div class="line"> </div>
-<div class="line">  ...</div>
-<div class="line"> }</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md7"></a>
-Removing scenes</h3>
-<p>You also need the ID to remove scenes </p><div class="fragment"><div class="line">{</div>
-<div class="line">  ...</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Remove the scene</span></div>
-<div class="line">  sceneManager.remove(mySceneID);</div>
-<div class="line"> </div>
-<div class="line">  ...</div>
-<div class="line"> }</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
-Objects and components</h2>
-<p>Components are simple data containers. Objects are a collection of one or more of these.</p>
-<h3><a class="anchor" id="autotoc_md9"></a>
-Creating an object</h3>
-<p><code>.hpp</code> </p><div class="fragment"><div class="line">...</div>
-<div class="line"> </div>
-<div class="line">#include &lt;v0idengine/Object.hpp&gt;</div>
-<div class="line"> </div>
-<div class="line"><span class="keyword">class </span>MyScene : <span class="keyword">public</span> <a class="code" href="classv0id_1_1Scene.html">v0id::Scene</a></div>
-<div class="line">{</div>
-<div class="line">...</div>
-<div class="line"> </div>
-<div class="line">private:</div>
-<div class="line">  <a class="code" href="classv0id_1_1Object.html">v0id::Object</a> player;</div>
-<div class="line"> </div>
-<div class="line">...</div>
-<div class="line">}</div>
-<div class="ttc" id="aclassv0id_1_1Object_html"><div class="ttname"><a href="classv0id_1_1Object.html">v0id::Object</a></div><div class="ttdoc">A collection of components that, together, form a game entity.</div><div class="ttdef"><b>Definition:</b> Object.hpp:17</div></div>
-</div><!-- fragment --><p> <code>.cpp</code> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span></div>
-<div class="line">MyScene::onCreate()</div>
-<div class="line">{</div>
-<div class="line">  player = std::make_shared&lt;Object&gt;();</div>
-<div class="line">}</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md10"></a>
-Adding Components</h3>
-<p><code>.cpp</code> </p><div class="fragment"><div class="line"><span class="keywordtype">void</span></div>
-<div class="line">MyScene::onCreate()</div>
-<div class="line">{</div>
-<div class="line">  ...</div>
-<div class="line">  </div>
-<div class="line">  <span class="comment">// Create a new component</span></div>
-<div class="line">  <span class="comment">// Sprite components, in particular, can be loaded</span></div>
-<div class="line">  <span class="keyword">auto</span> sprite = player-&gt;addComponent&lt;<a class="code" href="classv0id_1_1component_1_1Sprite.html">v0id::component::Sprite</a>&gt;();</div>
-<div class="line">  sprite-&gt;<a class="code" href="classv0id_1_1component_1_1Sprite.html#a2725e70417bdba349a4433ce01e4976d">load</a>(resourcePath.get() + <span class="stringliteral">&quot;player.png&quot;</span>);</div>
-<div class="line">}</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordtype">void</span></div>
-<div class="line">MyScene::draw(<a class="code" href="classv0id_1_1Window.html">v0id::Window</a>&amp; window)</div>
-<div class="line">{</div>
-<div class="line">  <span class="comment">// We can also draw sprites</span></div>
-<div class="line">  player-&gt;draw(window);</div>
-<div class="line">}</div>
-<div class="ttc" id="aclassv0id_1_1component_1_1Sprite_html"><div class="ttname"><a href="classv0id_1_1component_1_1Sprite.html">v0id::component::Sprite</a></div><div class="ttdoc">A renderable image to be added to an Object.</div><div class="ttdef"><b>Definition:</b> Sprite.hpp:14</div></div>
-<div class="ttc" id="aclassv0id_1_1component_1_1Sprite_html_a2725e70417bdba349a4433ce01e4976d"><div class="ttname"><a href="classv0id_1_1component_1_1Sprite.html#a2725e70417bdba349a4433ce01e4976d">v0id::component::Sprite::load</a></div><div class="ttdeci">void load(const std::string &amp;filePath)</div><div class="ttdoc">Load the sprite from an image file.</div></div>
-</div><!-- fragment --> </div></div><!-- PageDoc -->
+Windows 10/11</h3>
+<p>Windows installation instructions will be added in future.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Creating a new Game</h2>
+<ul>
+<li>Clone <code>v0idengine-template</code> <div class="fragment"><div class="line">git clone https://github.com/v0idzdev/v0idengine-template</div>
+</div><!-- fragment --></li>
+<li>Rename it to the name of your game — e.g., <code>MyGame</code> <div class="fragment"><div class="line">mv v0idengine-template MyGame</div>
+</div><!-- fragment --></li>
+<li>Enter the game directory <div class="fragment"><div class="line">cd MyGame</div>
+</div><!-- fragment --></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md6"></a>
+Creating a Project Generation Script</h3>
+<p>You can write a shell script to automatically generate <code>v0idengine</code> projects.</p>
+<ul>
+<li>Create a file called <code>v0idengine-new</code> and add the commands <div class="fragment"><div class="line">echo &quot;#!/bin/sh</div>
+<div class="line">git clone https://github.com/v0idzdev/v0idengine-template</div>
+<div class="line">mv v0idengine-template &#39;$1&#39;&quot; &gt; v0idengine-new</div>
+</div><!-- fragment --></li>
+<li>Create a scripts directory and add the file to it <div class="fragment"><div class="line">mkdir -p ~/bin</div>
+<div class="line">mv v0idengine-new ~/bin/</div>
+</div><!-- fragment --></li>
+<li>Allow the file to be executed <div class="fragment"><div class="line">cd ~/bin</div>
+<div class="line">chmod +x v0idengine-new</div>
+</div><!-- fragment --></li>
+<li>Add the file to your path <div class="fragment"><div class="line">echo &#39;export PATH=$PATH:~/bin&#39; &gt; ~/.bashrc</div>
+<div class="line">. ~/.bashrc</div>
+</div><!-- fragment --></li>
+</ul>
+<p>To create a project, execute the script and pass the project name as a parameter.</p><ul>
+<li>Execute <code>v0idengine-new</code> <div class="fragment"><div class="line">v0idengine-new MyGame</div>
+<div class="line">cd MyGame</div>
+</div><!-- fragment --></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md7"></a>
+Building and Running the Game</h2>
+<h3><a class="anchor" id="autotoc_md8"></a>
+Linux</h3>
+<ul>
+<li>Build the game <div class="fragment"><div class="line">cmake .</div>
+<div class="line">make</div>
+</div><!-- fragment --></li>
+<li>Run* the game <div class="fragment"><div class="line">./Game</div>
+</div><!-- fragment --></li>
+</ul>
+<p><code>*</code> — On some Linux distributions such as Ubuntu, the directory in which the v0idengine library is located (<code>/usr/local/lib/</code>) is not a default path. Execute the command below and run the game again: </p><div class="fragment"><div class="line">export LD_LIBRARY_PATH=&quot;$LD_LIBRARY_PATH:/usr/local/lib&quot;</div>
+</div><!-- fragment --><p>Alternatively, you may add the above line to your <code>.bashrc</code> so that you do not have to execute it each time you want to run your game. </p><div class="fragment"><div class="line">echo &#39;export LD_LIBRARY_PATH=&quot;$LD_LIBRARY_PATH:/usr/local/lib&quot;&#39; &gt; ~/.bashrc</div>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md9"></a>
+Windows 10/11</h3>
+<p>Windows build and execution instructions will be added in future. </p>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
