@@ -119,3 +119,9 @@ echo 'export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/lib"' > ~/.bashrc
 
 #### Windows 10/11
 Windows build and execution instructions will be added in future.
+
+### Building the Documentation
+- Run `doxygen` to re-generate the documentation
+```
+doxygen
+```
