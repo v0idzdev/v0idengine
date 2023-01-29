@@ -1,0 +1,145 @@
+\hypertarget{classv0id_1_1SceneStateMachine}{}\doxysection{v0id\+::Scene\+State\+Machine Class Reference}
+\label{classv0id_1_1SceneStateMachine}\index{v0id::SceneStateMachine@{v0id::SceneStateMachine}}
+
+
+Used to store each scene in the game and transition between them.  
+
+
+
+
+{\ttfamily \#include $<$Scene\+State\+Machine.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classv0id_1_1SceneStateMachine_a9e232ef1ab1fe23f9d4fed972e3b6770}\label{classv0id_1_1SceneStateMachine_a9e232ef1ab1fe23f9d4fed972e3b6770}} 
+\mbox{\hyperlink{classv0id_1_1SceneStateMachine_a9e232ef1ab1fe23f9d4fed972e3b6770}{Scene\+State\+Machine}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classv0id_1_1SceneStateMachine}{Scene\+State\+Machine}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv0id_1_1SceneStateMachine_a575782b31897284cfd7ac2c0b0a7b339}\label{classv0id_1_1SceneStateMachine_a575782b31897284cfd7ac2c0b0a7b339}} 
+void \mbox{\hyperlink{classv0id_1_1SceneStateMachine_a575782b31897284cfd7ac2c0b0a7b339}{process\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Call the process\+Input method of the current \mbox{\hyperlink{classv0id_1_1Scene}{Scene}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1SceneStateMachine_a3caa9a2f7f00ca9c0a1325a8e6e169e8}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Call the update method of the current \mbox{\hyperlink{classv0id_1_1Scene}{Scene}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1SceneStateMachine_aa565adf78ff5d78b0544346135d810a4}{late\+Update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Call the late\+Update method of the current \mbox{\hyperlink{classv0id_1_1Scene}{Scene}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1SceneStateMachine_afb35c2ee0f590b3acadb0880081b05e3}{draw}} (\mbox{\hyperlink{classv0id_1_1Window}{Window}} \&window)
+\begin{DoxyCompactList}\small\item\em Call the draw method of the current \mbox{\hyperlink{classv0id_1_1Scene}{Scene}}. \end{DoxyCompactList}\item 
+unsigned int \mbox{\hyperlink{classv0id_1_1SceneStateMachine_ad1c0ed48dd47bb2c522d76bd61534bcd}{add}} (std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} $>$ scene)
+\begin{DoxyCompactList}\small\item\em Add a new \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} to the \mbox{\hyperlink{classv0id_1_1SceneStateMachine}{Scene\+State\+Machine}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1SceneStateMachine_a5928be7e92d4e31d5d01589603308278}{switch\+To}} (unsigned int id)
+\begin{DoxyCompactList}\small\item\em Swicth to a \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} that was added to the \mbox{\hyperlink{classv0id_1_1SceneStateMachine}{Scene\+State\+Machine}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1SceneStateMachine_ac4d8bf792ef422364923694c14811ea6}{remove}} (unsigned int id)
+\begin{DoxyCompactList}\small\item\em Remove a \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} that was added to the \mbox{\hyperlink{classv0id_1_1SceneStateMachine}{Scene\+State\+Machine}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Used to store each scene in the game and transition between them. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classv0id_1_1SceneStateMachine_ad1c0ed48dd47bb2c522d76bd61534bcd}\label{classv0id_1_1SceneStateMachine_ad1c0ed48dd47bb2c522d76bd61534bcd}} 
+\index{v0id::SceneStateMachine@{v0id::SceneStateMachine}!add@{add}}
+\index{add@{add}!v0id::SceneStateMachine@{v0id::SceneStateMachine}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily unsigned int v0id\+::\+Scene\+State\+Machine\+::add (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} $>$}]{scene }\end{DoxyParamCaption})}
+
+
+
+Add a new \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} to the \mbox{\hyperlink{classv0id_1_1SceneStateMachine}{Scene\+State\+Machine}}. 
+
+\begin{DoxyNote}{Note}
+Calls the on\+Create method of the added scene
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em scene} & A shared pointer to the \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} to add \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The ID of the added scene 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv0id_1_1SceneStateMachine_afb35c2ee0f590b3acadb0880081b05e3}\label{classv0id_1_1SceneStateMachine_afb35c2ee0f590b3acadb0880081b05e3}} 
+\index{v0id::SceneStateMachine@{v0id::SceneStateMachine}!draw@{draw}}
+\index{draw@{draw}!v0id::SceneStateMachine@{v0id::SceneStateMachine}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void v0id\+::\+Scene\+State\+Machine\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classv0id_1_1Window}{Window}} \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Call the draw method of the current \mbox{\hyperlink{classv0id_1_1Scene}{Scene}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The \mbox{\hyperlink{classv0id_1_1Window}{Window}} used to draw drawables \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classv0id_1_1SceneStateMachine_aa565adf78ff5d78b0544346135d810a4}\label{classv0id_1_1SceneStateMachine_aa565adf78ff5d78b0544346135d810a4}} 
+\index{v0id::SceneStateMachine@{v0id::SceneStateMachine}!lateUpdate@{lateUpdate}}
+\index{lateUpdate@{lateUpdate}!v0id::SceneStateMachine@{v0id::SceneStateMachine}}
+\doxysubsubsection{\texorpdfstring{lateUpdate()}{lateUpdate()}}
+{\footnotesize\ttfamily void v0id\+::\+Scene\+State\+Machine\+::late\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Call the late\+Update method of the current \mbox{\hyperlink{classv0id_1_1Scene}{Scene}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The number of seconds since the last frame \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classv0id_1_1SceneStateMachine_ac4d8bf792ef422364923694c14811ea6}\label{classv0id_1_1SceneStateMachine_ac4d8bf792ef422364923694c14811ea6}} 
+\index{v0id::SceneStateMachine@{v0id::SceneStateMachine}!remove@{remove}}
+\index{remove@{remove}!v0id::SceneStateMachine@{v0id::SceneStateMachine}}
+\doxysubsubsection{\texorpdfstring{remove()}{remove()}}
+{\footnotesize\ttfamily void v0id\+::\+Scene\+State\+Machine\+::remove (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+
+
+
+Remove a \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} that was added to the \mbox{\hyperlink{classv0id_1_1SceneStateMachine}{Scene\+State\+Machine}}. 
+
+\begin{DoxyNote}{Note}
+Calls the on\+Destroy method of the removed scene
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the scene to remove \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classv0id_1_1SceneStateMachine_a5928be7e92d4e31d5d01589603308278}\label{classv0id_1_1SceneStateMachine_a5928be7e92d4e31d5d01589603308278}} 
+\index{v0id::SceneStateMachine@{v0id::SceneStateMachine}!switchTo@{switchTo}}
+\index{switchTo@{switchTo}!v0id::SceneStateMachine@{v0id::SceneStateMachine}}
+\doxysubsubsection{\texorpdfstring{switchTo()}{switchTo()}}
+{\footnotesize\ttfamily void v0id\+::\+Scene\+State\+Machine\+::switch\+To (\begin{DoxyParamCaption}\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+
+
+
+Swicth to a \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} that was added to the \mbox{\hyperlink{classv0id_1_1SceneStateMachine}{Scene\+State\+Machine}}. 
+
+\begin{DoxyNote}{Note}
+Calls the on\+Deactivate method of the old scene, and the on\+Activate method of the new
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em id} & The ID of the scene to switch to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classv0id_1_1SceneStateMachine_a3caa9a2f7f00ca9c0a1325a8e6e169e8}\label{classv0id_1_1SceneStateMachine_a3caa9a2f7f00ca9c0a1325a8e6e169e8}} 
+\index{v0id::SceneStateMachine@{v0id::SceneStateMachine}!update@{update}}
+\index{update@{update}!v0id::SceneStateMachine@{v0id::SceneStateMachine}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void v0id\+::\+Scene\+State\+Machine\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Call the update method of the current \mbox{\hyperlink{classv0id_1_1Scene}{Scene}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The number of seconds since the last frame \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/v0idengine/\+Scenes/Scene\+State\+Machine.\+hpp\end{DoxyCompactItemize}

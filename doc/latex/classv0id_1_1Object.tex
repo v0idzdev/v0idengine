@@ -1,0 +1,127 @@
+\hypertarget{classv0id_1_1Object}{}\doxysection{v0id\+::Object Class Reference}
+\label{classv0id_1_1Object}\index{v0id::Object@{v0id::Object}}
+
+
+A collection of components that, together, form a game entity.  
+
+
+
+
+{\ttfamily \#include $<$Object.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classv0id_1_1Object_ae39a0d15dfdaa4e9abe3acf6722cae6a}\label{classv0id_1_1Object_ae39a0d15dfdaa4e9abe3acf6722cae6a}} 
+\mbox{\hyperlink{classv0id_1_1Object_ae39a0d15dfdaa4e9abe3acf6722cae6a}{Object}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classv0id_1_1Object}{Object}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv0id_1_1Object_a29324dbdb93f7b1fc9593223c0eecd35}\label{classv0id_1_1Object_a29324dbdb93f7b1fc9593223c0eecd35}} 
+void \mbox{\hyperlink{classv0id_1_1Object_a29324dbdb93f7b1fc9593223c0eecd35}{awake}} ()
+\begin{DoxyCompactList}\small\item\em Called when the \mbox{\hyperlink{classv0id_1_1Object}{Object}} is created. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv0id_1_1Object_a5c908759a2f3c29c06f0e3f79c37ecbb}\label{classv0id_1_1Object_a5c908759a2f3c29c06f0e3f79c37ecbb}} 
+void \mbox{\hyperlink{classv0id_1_1Object_a5c908759a2f3c29c06f0e3f79c37ecbb}{start}} ()
+\begin{DoxyCompactList}\small\item\em Called after the awake method. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1Object_a0c02dadc0dd9873a78aca2ecce1a66c9}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Call the update method of each component on each frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1Object_a06436864aceee3721813452d4793db60}{late\+Update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Call the late\+Update method of each component on each frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1Object_afd9a91f3680086e0e61f71adf3ba172a}{draw}} (\mbox{\hyperlink{classv0id_1_1Window}{Window}} \&window)
+\begin{DoxyCompactList}\small\item\em Call the draw method of each component on each frame. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{classv0id_1_1Object_a9f60aa0a659af269852ed51910950629}{add\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Add a new component to the \mbox{\hyperlink{classv0id_1_1Object}{Object}}. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\std\+::shared\+\_\+ptr$<$ T $>$ \mbox{\hyperlink{classv0id_1_1Object_a67b352b57b9509d2ca12f6c2a1a95f1b}{get\+Component}} ()
+\begin{DoxyCompactList}\small\item\em Get an existing component that was added to the \mbox{\hyperlink{classv0id_1_1Object}{Object}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A collection of components that, together, form a game entity. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classv0id_1_1Object_a9f60aa0a659af269852ed51910950629}\label{classv0id_1_1Object_a9f60aa0a659af269852ed51910950629}} 
+\index{v0id::Object@{v0id::Object}!addComponent@{addComponent}}
+\index{addComponent@{addComponent}!v0id::Object@{v0id::Object}}
+\doxysubsubsection{\texorpdfstring{addComponent()}{addComponent()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::shared\+\_\+ptr$<$T$>$ v0id\+::\+Object\+::add\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add a new component to the \mbox{\hyperlink{classv0id_1_1Object}{Object}}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component to add \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+An pointer to the instance of the added component 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv0id_1_1Object_afd9a91f3680086e0e61f71adf3ba172a}\label{classv0id_1_1Object_afd9a91f3680086e0e61f71adf3ba172a}} 
+\index{v0id::Object@{v0id::Object}!draw@{draw}}
+\index{draw@{draw}!v0id::Object@{v0id::Object}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void v0id\+::\+Object\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classv0id_1_1Window}{Window}} \&}]{window }\end{DoxyParamCaption})}
+
+
+
+Call the draw method of each component on each frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & A window used to display drawables \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classv0id_1_1Object_a67b352b57b9509d2ca12f6c2a1a95f1b}\label{classv0id_1_1Object_a67b352b57b9509d2ca12f6c2a1a95f1b}} 
+\index{v0id::Object@{v0id::Object}!getComponent@{getComponent}}
+\index{getComponent@{getComponent}!v0id::Object@{v0id::Object}}
+\doxysubsubsection{\texorpdfstring{getComponent()}{getComponent()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+std\+::shared\+\_\+ptr$<$T$>$ v0id\+::\+Object\+::get\+Component (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get an existing component that was added to the \mbox{\hyperlink{classv0id_1_1Object}{Object}}. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The component to get \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxyReturn}{Returns}
+An pointer to the instance of the added component, or nullptr if not found 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv0id_1_1Object_a06436864aceee3721813452d4793db60}\label{classv0id_1_1Object_a06436864aceee3721813452d4793db60}} 
+\index{v0id::Object@{v0id::Object}!lateUpdate@{lateUpdate}}
+\index{lateUpdate@{lateUpdate}!v0id::Object@{v0id::Object}}
+\doxysubsubsection{\texorpdfstring{lateUpdate()}{lateUpdate()}}
+{\footnotesize\ttfamily void v0id\+::\+Object\+::late\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Call the late\+Update method of each component on each frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The number of seconds since the last frame \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classv0id_1_1Object_a0c02dadc0dd9873a78aca2ecce1a66c9}\label{classv0id_1_1Object_a0c02dadc0dd9873a78aca2ecce1a66c9}} 
+\index{v0id::Object@{v0id::Object}!update@{update}}
+\index{update@{update}!v0id::Object@{v0id::Object}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily void v0id\+::\+Object\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})}
+
+
+
+Call the update method of each component on each frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The number of seconds since the last frame \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/v0idengine/\+ECS/Object.\+hpp\end{DoxyCompactItemize}

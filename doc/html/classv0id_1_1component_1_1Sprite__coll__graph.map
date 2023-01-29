@@ -1,0 +1,5 @@
+<map id="v0id::component::Sprite" name="v0id::component::Sprite">
+<area shape="rect" id="node1" title="A renderable image to be added to an Object." alt="" coords="5,171,183,197"/>
+<area shape="rect" id="node2" href="$classv0id_1_1Component.html" title="Abstract base class for v0idengine components." alt="" coords="27,95,161,121"/>
+<area shape="rect" id="node3" href="$classv0id_1_1Object.html" title="A collection of components that, together, form a game entity." alt="" coords="44,5,144,32"/>
+</map>

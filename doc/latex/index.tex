@@ -1,0 +1,349 @@
+\label{index_md_README}%
+\Hypertarget{index_md_README}%
+A lightweight game engine for small 2D titles, with minimal overhead.\hypertarget{index_autotoc_md1}{}\doxysubsection{Getting started}\label{index_autotoc_md1}
+Windows is not supported yet. These instructions are for Linux.
+
+
+\begin{DoxyEnumerate}
+\item Install 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git clone https://github.com/matthewflegg/v0idengine}
+\DoxyCodeLine{cd v0idengine}
+\DoxyCodeLine{sudo make install}
+
+\end{DoxyCode}
+
+\item Create project 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{mkdir MyGame/\{Source,Resources\}}
+\DoxyCodeLine{cd MyGame}
+\DoxyCodeLine{touch Main.cpp Source/\{Game.cpp,Game.hpp,SceneLevel.cpp,SceneLevel.hpp\} Makefile}
+
+\end{DoxyCode}
+
+\item Add boilerplate
+\end{DoxyEnumerate}
+
+{\ttfamily Main.\+cpp} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}Source/Game.hpp"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int} main() \{}
+\DoxyCodeLine{  Game game;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{while} (game.isRunning()) \{}
+\DoxyCodeLine{    game.captureInput();}
+\DoxyCodeLine{    game.update();}
+\DoxyCodeLine{    game.lateUpdate();}
+\DoxyCodeLine{    game.draw();}
+\DoxyCodeLine{    game.calculateDeltaTime();}
+\DoxyCodeLine{  \}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ {\ttfamily Source/\+Game.\+hpp} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef GAME\_HPP}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define GAME\_HPP}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}SceneLevel.hpp"{}}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <v0idengine/Input.hpp>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <v0idengine/ResourcePath.hpp>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <v0idengine/SceneStateMachine.hpp>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <v0idengine/Window.hpp>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class }Game}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{  \textcolor{comment}{// Create a new game instance}}
+\DoxyCodeLine{  Game();}
+\DoxyCodeLine{  \string~Game();}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  \textcolor{keywordtype}{void} captureInput();}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} update();}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} lateUpdate();}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} draw();}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} calculateDeltaTime();}
+\DoxyCodeLine{  \textcolor{keywordtype}{bool} isRunning() \textcolor{keyword}{const};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{private}:}
+\DoxyCodeLine{  \mbox{\hyperlink{classv0id_1_1Window}{v0id::Window}} window;}
+\DoxyCodeLine{  \mbox{\hyperlink{classv0id_1_1ResourcePath}{v0id::ResourcePath}} resourcePath;}
+\DoxyCodeLine{  \mbox{\hyperlink{classv0id_1_1Input}{v0id::Input}} input;}
+\DoxyCodeLine{  \mbox{\hyperlink{classv0id_1_1SceneStateMachine}{v0id::SceneStateMachine}} sceneManager;}
+\DoxyCodeLine{}
+\DoxyCodeLine{  sf::Clock clock;}
+\DoxyCodeLine{  \textcolor{keywordtype}{float} deltaTime;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
+ {\ttfamily Source/\+Game.\+cpp} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}Game.hpp"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Game::Game()}
+\DoxyCodeLine{  : window(\textcolor{stringliteral}{"{}My Game"{}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{comment}{// TODO: Add your scenes here}}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  std::shared\_ptr<SceneLevel> level =}
+\DoxyCodeLine{    std::make\_shared<SceneLevel>(resourcePath);}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = sceneManager.add(level);}
+\DoxyCodeLine{  sceneManager.switchTo(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{comment}{// TODO: Add additional loading code here}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  deltaTime = clock.restart().asSeconds();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{Game::\string~Game() \{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}}
+\DoxyCodeLine{Game::captureInput()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  sceneManager.processInput();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}}
+\DoxyCodeLine{Game::update()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  window.update();}
+\DoxyCodeLine{  sceneManager.update(deltaTime);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}}
+\DoxyCodeLine{Game::lateUpdate()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  sceneManager.lateUpdate(deltaTime);}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}}
+\DoxyCodeLine{Game::draw()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  window.beginDraw();}
+\DoxyCodeLine{  sceneManager.draw(window);}
+\DoxyCodeLine{  window.endDraw();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}}
+\DoxyCodeLine{Game::calculateDeltaTime()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  deltaTime = clock.restart().asSeconds();}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{bool}}
+\DoxyCodeLine{Game::isRunning()\textcolor{keyword}{ const}}
+\DoxyCodeLine{\textcolor{keyword}{}\{}
+\DoxyCodeLine{  \textcolor{keywordflow}{return} window.isOpen();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ {\ttfamily Scene\+Level.\+hpp} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef SCENELEVEL\_HPP}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define SCENELEVEL\_HPP}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <v0idengine/Input.hpp>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <v0idengine/ResourcePath.hpp>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <v0idengine/Scene.hpp>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class }SceneLevel : \textcolor{keyword}{public} \mbox{\hyperlink{classv0id_1_1Scene}{v0id::Scene}}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{  SceneLevel(\mbox{\hyperlink{classv0id_1_1ResourcePath}{v0id::ResourcePath}}\& resourcePath);}
+\DoxyCodeLine{  \string~SceneLevel();}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} \mbox{\hyperlink{classv0id_1_1Scene_afb82885468ef39cb5d8842dbe4fd3a57}{onCreate}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} \mbox{\hyperlink{classv0id_1_1Scene_aefcf964ee6371206de15b22b59e08e0c}{onDestroy}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} \mbox{\hyperlink{classv0id_1_1Scene_aecf2ba10548f80e137f83a2f1b1198a3}{processInput}}() \textcolor{keyword}{override};}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} \mbox{\hyperlink{classv0id_1_1Scene_a83d4baba95ead9c60d347f639cbf4444}{update}}(\textcolor{keywordtype}{float} deltaTime) \textcolor{keyword}{override};}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} \mbox{\hyperlink{classv0id_1_1Scene_ab9cdf3b4ecbac142aa6f7e485a2f685b}{draw}}(\mbox{\hyperlink{classv0id_1_1Window}{v0id::Window}}\& window) \textcolor{keyword}{override};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{private}:}
+\DoxyCodeLine{  \textcolor{comment}{// TODO: Place sprites and scene variables here}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \mbox{\hyperlink{classv0id_1_1ResourcePath}{v0id::ResourcePath}}\& resourcePath;}
+\DoxyCodeLine{  \mbox{\hyperlink{classv0id_1_1Input}{v0id::Input}} input;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
+ {\ttfamily Scene\+Level.\+cpp} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include "{}SceneLevel.hpp"{}}}
+\DoxyCodeLine{}
+\DoxyCodeLine{SceneLevel::SceneLevel(\mbox{\hyperlink{classv0id_1_1ResourcePath}{v0id::ResourcePath}}\& resourcePath)}
+\DoxyCodeLine{  : resourcePath(resourcePath)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{SceneLevel::\string~SceneLevel() \{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}}
+\DoxyCodeLine{SceneLevel::onCreate()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{comment}{// TODO: Load content}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}}
+\DoxyCodeLine{SceneLevel::onDestroy()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}}
+\DoxyCodeLine{SceneLevel::processInput()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  input.update();}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordflow}{if} (input.isKeyPressed(\mbox{\hyperlink{classv0id_1_1Input_a54d843553e0f2edbe25e2ddd289eed59a91f4253ca587ca8ac4e63b9ceb351f5d}{v0id::Input::Key::Esc}}))}
+\DoxyCodeLine{    exit(0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{comment}{// TODO: Process input}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}}
+\DoxyCodeLine{SceneLevel::update(\textcolor{keywordtype}{float} deltaTime)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{comment}{// TODO: Update state}}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}}
+\DoxyCodeLine{SceneLevel::draw(\mbox{\hyperlink{classv0id_1_1Window}{v0id::Window}}\& window)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{comment}{// TODO: Draw assets}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md2}{}\doxysection{API}\label{index_autotoc_md2}
+v0idengine works by creating a {\ttfamily Game} instance, which contains a {\ttfamily Window} (for rendering) and a {\ttfamily Scene\+State\+Machine} (for switching scenes). Scenes will contain your update logic, drawing logic, and assets, while {\ttfamily Game} will contain your scene management code.\hypertarget{index_autotoc_md3}{}\doxysubsection{Scenes}\label{index_autotoc_md3}
+\hypertarget{index_autotoc_md4}{}\doxysubsubsection{Creating scenes}\label{index_autotoc_md4}
+Scenes are created by overriding {\ttfamily Scene}. Add your game logic in {\ttfamily update()}, drawing code in {\ttfamily draw()}, and assets as private variables. 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#ifndef MYSCENE\_HPP}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#define MYSCENE\_HPP}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <v0idengine/Input.hpp>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <v0idengine/ResourcePath.hpp>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include <v0idengine/Scene.hpp>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class }MyScene : \textcolor{keyword}{public} Scene}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\textcolor{keyword}{public}:}
+\DoxyCodeLine{  MyScene(ResourcePath\& resourcePath);}
+\DoxyCodeLine{  \string~MyScene();}
+\DoxyCodeLine{}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} onCreate() \textcolor{keyword}{override};}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} onDestroy() \textcolor{keyword}{override};}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} processInput() \textcolor{keyword}{override};}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} update(\textcolor{keywordtype}{float} deltaTime) \textcolor{keyword}{override};}
+\DoxyCodeLine{  \textcolor{keywordtype}{void} draw(Window\& window) \textcolor{keyword}{override};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{private}:}
+\DoxyCodeLine{  \textcolor{comment}{// TODO: Place sprites and scene variables here}}
+\DoxyCodeLine{}
+\DoxyCodeLine{  ResourcePath\& resourcePath;}
+\DoxyCodeLine{  Input input;}
+\DoxyCodeLine{\};}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md5}{}\doxysubsubsection{Adding scenes}\label{index_autotoc_md5}
+Adding one looks like this\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{Game::Game()}
+\DoxyCodeLine{  : window(\textcolor{stringliteral}{"{}My Game"{}})}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{comment}{// Create a shared pointer to your scene}}
+\DoxyCodeLine{  std::shared\_ptr<MyScene> myScene =}
+\DoxyCodeLine{    std::make\_shared<MyScene>(resourcePath); }
+\DoxyCodeLine{    }
+\DoxyCodeLine{  \textcolor{comment}{// Add the scene to the SceneStateMachine}}
+\DoxyCodeLine{  \textcolor{comment}{// Its ID will be returned. You need this to switch to or remove the scene}}
+\DoxyCodeLine{  \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} mySceneID = sceneManager.add(myScene);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md6}{}\doxysubsubsection{Switching scenes}\label{index_autotoc_md6}
+Scenes are referenced by their ID. Use it to switch to a scene 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  ...}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  \textcolor{comment}{// Switch to the scene using the ID}}
+\DoxyCodeLine{  sceneManager.switchTo(mySceneID);}
+\DoxyCodeLine{ }
+\DoxyCodeLine{  ...}
+\DoxyCodeLine{ \}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md7}{}\doxysubsubsection{Removing scenes}\label{index_autotoc_md7}
+You also need the ID to remove scenes 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  ...}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  \textcolor{comment}{// Remove the scene}}
+\DoxyCodeLine{  sceneManager.remove(mySceneID);}
+\DoxyCodeLine{ }
+\DoxyCodeLine{  ...}
+\DoxyCodeLine{ \}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md8}{}\doxysubsection{Objects and components}\label{index_autotoc_md8}
+Components are simple data containers. Objects are a collection of one or more of these.\hypertarget{index_autotoc_md9}{}\doxysubsubsection{Creating an object}\label{index_autotoc_md9}
+{\ttfamily .hpp} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{...}
+\DoxyCodeLine{}
+\DoxyCodeLine{\#include <v0idengine/Object.hpp>}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keyword}{class }MyScene : \textcolor{keyword}{public} \mbox{\hyperlink{classv0id_1_1Scene}{v0id::Scene}}}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{...}
+\DoxyCodeLine{}
+\DoxyCodeLine{private:}
+\DoxyCodeLine{  \mbox{\hyperlink{classv0id_1_1Object}{v0id::Object}} player;}
+\DoxyCodeLine{}
+\DoxyCodeLine{...}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ {\ttfamily .cpp} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}}
+\DoxyCodeLine{MyScene::onCreate()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  player = std::make\_shared<Object>();}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{index_autotoc_md10}{}\doxysubsubsection{Adding Components}\label{index_autotoc_md10}
+{\ttfamily .cpp} 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{void}}
+\DoxyCodeLine{MyScene::onCreate()}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  ...}
+\DoxyCodeLine{  }
+\DoxyCodeLine{  \textcolor{comment}{// Create a new component}}
+\DoxyCodeLine{  \textcolor{comment}{// Sprite components, in particular, can be loaded}}
+\DoxyCodeLine{  \textcolor{keyword}{auto} sprite = player-\/>addComponent<\mbox{\hyperlink{classv0id_1_1component_1_1Sprite}{v0id::component::Sprite}}>();}
+\DoxyCodeLine{  sprite-\/>\mbox{\hyperlink{classv0id_1_1component_1_1Sprite_a2725e70417bdba349a4433ce01e4976d}{load}}(resourcePath.get() + \textcolor{stringliteral}{"{}player.png"{}});}
+\DoxyCodeLine{\}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{void}}
+\DoxyCodeLine{MyScene::draw(\mbox{\hyperlink{classv0id_1_1Window}{v0id::Window}}\& window)}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  \textcolor{comment}{// We can also draw sprites}}
+\DoxyCodeLine{  player-\/>draw(window);}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+ 

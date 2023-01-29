@@ -1,0 +1,91 @@
+\hypertarget{classv0id_1_1Scene}{}\doxysection{v0id\+::Scene Class Reference}
+\label{classv0id_1_1Scene}\index{v0id::Scene@{v0id::Scene}}
+
+
+Abstract class that user-\/created Scenes will override to construct a game.  
+
+
+
+
+{\ttfamily \#include $<$Scene.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classv0id_1_1Scene_afb82885468ef39cb5d8842dbe4fd3a57}\label{classv0id_1_1Scene_afb82885468ef39cb5d8842dbe4fd3a57}} 
+virtual void \mbox{\hyperlink{classv0id_1_1Scene_afb82885468ef39cb5d8842dbe4fd3a57}{on\+Create}} ()=0
+\begin{DoxyCompactList}\small\item\em Called once when the \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} is created. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv0id_1_1Scene_aefcf964ee6371206de15b22b59e08e0c}\label{classv0id_1_1Scene_aefcf964ee6371206de15b22b59e08e0c}} 
+virtual void \mbox{\hyperlink{classv0id_1_1Scene_aefcf964ee6371206de15b22b59e08e0c}{on\+Destroy}} ()=0
+\begin{DoxyCompactList}\small\item\em Called once when the \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} is destroyed. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv0id_1_1Scene_a51a9e7ce5896f50297b3e7415783ffce}\label{classv0id_1_1Scene_a51a9e7ce5896f50297b3e7415783ffce}} 
+virtual void \mbox{\hyperlink{classv0id_1_1Scene_a51a9e7ce5896f50297b3e7415783ffce}{on\+Activate}} ()
+\begin{DoxyCompactList}\small\item\em Called each time the \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} is activated. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv0id_1_1Scene_aab9dde2a32022bd777cb8c6210e0bde4}\label{classv0id_1_1Scene_aab9dde2a32022bd777cb8c6210e0bde4}} 
+virtual void \mbox{\hyperlink{classv0id_1_1Scene_aab9dde2a32022bd777cb8c6210e0bde4}{on\+Deactivate}} ()
+\begin{DoxyCompactList}\small\item\em Called each time the \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} is deactivated. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv0id_1_1Scene_aecf2ba10548f80e137f83a2f1b1198a3}\label{classv0id_1_1Scene_aecf2ba10548f80e137f83a2f1b1198a3}} 
+virtual void \mbox{\hyperlink{classv0id_1_1Scene_aecf2ba10548f80e137f83a2f1b1198a3}{process\+Input}} ()
+\begin{DoxyCompactList}\small\item\em Contains the input management code for the \mbox{\hyperlink{classv0id_1_1Scene}{Scene}}. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classv0id_1_1Scene_a83d4baba95ead9c60d347f639cbf4444}{update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Update the state of the \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} on each frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classv0id_1_1Scene_ade8a0caf3eb7099476ecc8e93a16dff0}{late\+Update}} (float delta\+Time)
+\begin{DoxyCompactList}\small\item\em Update the state of the \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} after each frame. \end{DoxyCompactList}\item 
+virtual void \mbox{\hyperlink{classv0id_1_1Scene_ab9cdf3b4ecbac142aa6f7e485a2f685b}{draw}} (\mbox{\hyperlink{classv0id_1_1Window}{Window}} \&window)
+\begin{DoxyCompactList}\small\item\em Draw drawables in the \mbox{\hyperlink{classv0id_1_1Scene}{Scene}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Abstract class that user-\/created Scenes will override to construct a game. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classv0id_1_1Scene_ab9cdf3b4ecbac142aa6f7e485a2f685b}\label{classv0id_1_1Scene_ab9cdf3b4ecbac142aa6f7e485a2f685b}} 
+\index{v0id::Scene@{v0id::Scene}!draw@{draw}}
+\index{draw@{draw}!v0id::Scene@{v0id::Scene}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily virtual void v0id\+::\+Scene\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classv0id_1_1Window}{Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Draw drawables in the \mbox{\hyperlink{classv0id_1_1Scene}{Scene}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The \mbox{\hyperlink{classv0id_1_1Window}{Window}} used to draw drawables \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classv0id_1_1Scene_ade8a0caf3eb7099476ecc8e93a16dff0}\label{classv0id_1_1Scene_ade8a0caf3eb7099476ecc8e93a16dff0}} 
+\index{v0id::Scene@{v0id::Scene}!lateUpdate@{lateUpdate}}
+\index{lateUpdate@{lateUpdate}!v0id::Scene@{v0id::Scene}}
+\doxysubsubsection{\texorpdfstring{lateUpdate()}{lateUpdate()}}
+{\footnotesize\ttfamily virtual void v0id\+::\+Scene\+::late\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Update the state of the \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} after each frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The number of seconds since the last frame \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classv0id_1_1Scene_a83d4baba95ead9c60d347f639cbf4444}\label{classv0id_1_1Scene_a83d4baba95ead9c60d347f639cbf4444}} 
+\index{v0id::Scene@{v0id::Scene}!update@{update}}
+\index{update@{update}!v0id::Scene@{v0id::Scene}}
+\doxysubsubsection{\texorpdfstring{update()}{update()}}
+{\footnotesize\ttfamily virtual void v0id\+::\+Scene\+::update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Update the state of the \mbox{\hyperlink{classv0id_1_1Scene}{Scene}} on each frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The number of seconds since the last frame \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/v0idengine/\+Scenes/Scene.\+hpp\end{DoxyCompactItemize}

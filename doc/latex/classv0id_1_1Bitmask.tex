@@ -1,0 +1,137 @@
+\hypertarget{classv0id_1_1Bitmask}{}\doxysection{v0id\+::Bitmask Class Reference}
+\label{classv0id_1_1Bitmask}\index{v0id::Bitmask@{v0id::Bitmask}}
+
+
+Used to store and operate on an array of bits.  
+
+
+
+
+{\ttfamily \#include $<$Bitmask.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classv0id_1_1Bitmask_aa14b2090e37f07d2c6e2aef36fbae934}\label{classv0id_1_1Bitmask_aa14b2090e37f07d2c6e2aef36fbae934}} 
+\mbox{\hyperlink{classv0id_1_1Bitmask_aa14b2090e37f07d2c6e2aef36fbae934}{Bitmask}} ()
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classv0id_1_1Bitmask}{Bitmask}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1Bitmask_ac7c64756d63627c22a6ca4a676b3e4c5}{set\+Mask}} (\mbox{\hyperlink{classv0id_1_1Bitmask}{Bitmask}} \&other)
+\begin{DoxyCompactList}\small\item\em Change the bits stored by the \mbox{\hyperlink{classv0id_1_1Bitmask}{Bitmask}} to those of another. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{classv0id_1_1Bitmask_a7de3be1f65fbc5b86380975d63ec3178}{get\+Mask}} () const
+\begin{DoxyCompactList}\small\item\em Get the bits stored by the \mbox{\hyperlink{classv0id_1_1Bitmask}{Bitmask}}. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classv0id_1_1Bitmask_af5665f406055a90ed64e6bd73733f1c0}{get\+Bit}} (int pos) const
+\begin{DoxyCompactList}\small\item\em Get a single bit at the specified position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1Bitmask_a24174efd29c902b04fcd457b2ea97a13}{set\+Bit}} (int pos, bool on)
+\begin{DoxyCompactList}\small\item\em Set a single bit at the specified position. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1Bitmask_a63bbfc883d3d4079d47b6c6ca33cae4d}{set\+Bit}} (int pos)
+\begin{DoxyCompactList}\small\item\em Set a single bit at the specified position to 1. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1Bitmask_a101885d374297bd6f95f08b0e9cadcb9}{clear\+Bit}} (int pos)
+\begin{DoxyCompactList}\small\item\em Set a single bit at the specified position to 0. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classv0id_1_1Bitmask_a7b8d89990ffb813f5525d8cdbe0970d5}\label{classv0id_1_1Bitmask_a7b8d89990ffb813f5525d8cdbe0970d5}} 
+void \mbox{\hyperlink{classv0id_1_1Bitmask_a7b8d89990ffb813f5525d8cdbe0970d5}{clear}} ()
+\begin{DoxyCompactList}\small\item\em Set every bit to 0. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Used to store and operate on an array of bits. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classv0id_1_1Bitmask_a101885d374297bd6f95f08b0e9cadcb9}\label{classv0id_1_1Bitmask_a101885d374297bd6f95f08b0e9cadcb9}} 
+\index{v0id::Bitmask@{v0id::Bitmask}!clearBit@{clearBit}}
+\index{clearBit@{clearBit}!v0id::Bitmask@{v0id::Bitmask}}
+\doxysubsubsection{\texorpdfstring{clearBit()}{clearBit()}}
+{\footnotesize\ttfamily void v0id\+::\+Bitmask\+::clear\+Bit (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption})}
+
+
+
+Set a single bit at the specified position to 0. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classv0id_1_1Bitmask_af5665f406055a90ed64e6bd73733f1c0}\label{classv0id_1_1Bitmask_af5665f406055a90ed64e6bd73733f1c0}} 
+\index{v0id::Bitmask@{v0id::Bitmask}!getBit@{getBit}}
+\index{getBit@{getBit}!v0id::Bitmask@{v0id::Bitmask}}
+\doxysubsubsection{\texorpdfstring{getBit()}{getBit()}}
+{\footnotesize\ttfamily bool v0id\+::\+Bitmask\+::get\+Bit (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption}) const}
+
+
+
+Get a single bit at the specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The value of the bit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv0id_1_1Bitmask_a7de3be1f65fbc5b86380975d63ec3178}\label{classv0id_1_1Bitmask_a7de3be1f65fbc5b86380975d63ec3178}} 
+\index{v0id::Bitmask@{v0id::Bitmask}!getMask@{getMask}}
+\index{getMask@{getMask}!v0id::Bitmask@{v0id::Bitmask}}
+\doxysubsubsection{\texorpdfstring{getMask()}{getMask()}}
+{\footnotesize\ttfamily uint32\+\_\+t v0id\+::\+Bitmask\+::get\+Mask (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get the bits stored by the \mbox{\hyperlink{classv0id_1_1Bitmask}{Bitmask}}. 
+
+\begin{DoxyReturn}{Returns}
+The bits 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classv0id_1_1Bitmask_a63bbfc883d3d4079d47b6c6ca33cae4d}\label{classv0id_1_1Bitmask_a63bbfc883d3d4079d47b6c6ca33cae4d}} 
+\index{v0id::Bitmask@{v0id::Bitmask}!setBit@{setBit}}
+\index{setBit@{setBit}!v0id::Bitmask@{v0id::Bitmask}}
+\doxysubsubsection{\texorpdfstring{setBit()}{setBit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void v0id\+::\+Bitmask\+::set\+Bit (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption})}
+
+
+
+Set a single bit at the specified position to 1. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classv0id_1_1Bitmask_a24174efd29c902b04fcd457b2ea97a13}\label{classv0id_1_1Bitmask_a24174efd29c902b04fcd457b2ea97a13}} 
+\index{v0id::Bitmask@{v0id::Bitmask}!setBit@{setBit}}
+\index{setBit@{setBit}!v0id::Bitmask@{v0id::Bitmask}}
+\doxysubsubsection{\texorpdfstring{setBit()}{setBit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void v0id\+::\+Bitmask\+::set\+Bit (\begin{DoxyParamCaption}\item[{int}]{pos,  }\item[{bool}]{on }\end{DoxyParamCaption})}
+
+
+
+Set a single bit at the specified position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & The position \\
+\hline
+{\em on} & The value to assign to the bit \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classv0id_1_1Bitmask_ac7c64756d63627c22a6ca4a676b3e4c5}\label{classv0id_1_1Bitmask_ac7c64756d63627c22a6ca4a676b3e4c5}} 
+\index{v0id::Bitmask@{v0id::Bitmask}!setMask@{setMask}}
+\index{setMask@{setMask}!v0id::Bitmask@{v0id::Bitmask}}
+\doxysubsubsection{\texorpdfstring{setMask()}{setMask()}}
+{\footnotesize\ttfamily void v0id\+::\+Bitmask\+::set\+Mask (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classv0id_1_1Bitmask}{Bitmask}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+Change the bits stored by the \mbox{\hyperlink{classv0id_1_1Bitmask}{Bitmask}} to those of another. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & The other \mbox{\hyperlink{classv0id_1_1Bitmask}{Bitmask}} \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/Bitmask.\+hpp\item 
+src/Bitmask.\+cpp\end{DoxyCompactItemize}

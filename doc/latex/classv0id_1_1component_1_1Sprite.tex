@@ -1,0 +1,124 @@
+\hypertarget{classv0id_1_1component_1_1Sprite}{}\doxysection{v0id\+::component\+::Sprite Class Reference}
+\label{classv0id_1_1component_1_1Sprite}\index{v0id::component::Sprite@{v0id::component::Sprite}}
+
+
+A renderable image to be added to an \mbox{\hyperlink{classv0id_1_1Object}{Object}}.  
+
+
+
+
+{\ttfamily \#include $<$Sprite.\+hpp$>$}
+
+
+
+Inheritance diagram for v0id\+::component\+::Sprite\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classv0id_1_1component_1_1Sprite__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for v0id\+::component\+::Sprite\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{classv0id_1_1component_1_1Sprite__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classv0id_1_1component_1_1Sprite_a3a47bae6d50938b246d4bda186db6880}{Sprite}} (\mbox{\hyperlink{classv0id_1_1Object}{Object}} $\ast$owner)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classv0id_1_1component_1_1Sprite}{Sprite}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1component_1_1Sprite_a2725e70417bdba349a4433ce01e4976d}{load}} (const std\+::string \&file\+Path)
+\begin{DoxyCompactList}\small\item\em Load the sprite from an image file. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1component_1_1Sprite_a8293aba6e9ad9e4030045f59f46c1056}{late\+Update}} (float delta\+Time) override
+\begin{DoxyCompactList}\small\item\em Execute post-\/update logic for the \mbox{\hyperlink{classv0id_1_1component_1_1Sprite}{Sprite}} after each frame. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classv0id_1_1component_1_1Sprite_aed8f4ce4da5bf678c9fc1d176885e449}{draw}} (\mbox{\hyperlink{classv0id_1_1Window}{Window}} \&window) override
+\begin{DoxyCompactList}\small\item\em Draw the sprite on-\/screen each frame. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+A renderable image to be added to an \mbox{\hyperlink{classv0id_1_1Object}{Object}}. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classv0id_1_1component_1_1Sprite_a3a47bae6d50938b246d4bda186db6880}\label{classv0id_1_1component_1_1Sprite_a3a47bae6d50938b246d4bda186db6880}} 
+\index{v0id::component::Sprite@{v0id::component::Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!v0id::component::Sprite@{v0id::component::Sprite}}
+\doxysubsubsection{\texorpdfstring{Sprite()}{Sprite()}}
+{\footnotesize\ttfamily v0id\+::component\+::\+Sprite\+::\+Sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classv0id_1_1Object}{Object}} $\ast$}]{owner }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classv0id_1_1component_1_1Sprite}{Sprite}} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner} & The \mbox{\hyperlink{classv0id_1_1Object}{Object}} to add the \mbox{\hyperlink{classv0id_1_1component_1_1Sprite}{Sprite}} to \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classv0id_1_1component_1_1Sprite_aed8f4ce4da5bf678c9fc1d176885e449}\label{classv0id_1_1component_1_1Sprite_aed8f4ce4da5bf678c9fc1d176885e449}} 
+\index{v0id::component::Sprite@{v0id::component::Sprite}!draw@{draw}}
+\index{draw@{draw}!v0id::component::Sprite@{v0id::component::Sprite}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void v0id\+::component\+::\+Sprite\+::draw (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classv0id_1_1Window}{Window}} \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Draw the sprite on-\/screen each frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & The window used to display drawables \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classv0id_1_1Component_aedacffaf5de30cc20fba1a504a67bc0f}{v0id\+::\+Component}}.
+
+\mbox{\Hypertarget{classv0id_1_1component_1_1Sprite_a8293aba6e9ad9e4030045f59f46c1056}\label{classv0id_1_1component_1_1Sprite_a8293aba6e9ad9e4030045f59f46c1056}} 
+\index{v0id::component::Sprite@{v0id::component::Sprite}!lateUpdate@{lateUpdate}}
+\index{lateUpdate@{lateUpdate}!v0id::component::Sprite@{v0id::component::Sprite}}
+\doxysubsubsection{\texorpdfstring{lateUpdate()}{lateUpdate()}}
+{\footnotesize\ttfamily void v0id\+::component\+::\+Sprite\+::late\+Update (\begin{DoxyParamCaption}\item[{float}]{delta\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+
+
+Execute post-\/update logic for the \mbox{\hyperlink{classv0id_1_1component_1_1Sprite}{Sprite}} after each frame. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em delta\+Time} & The number of seconds since the last frame \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented from \mbox{\hyperlink{classv0id_1_1Component_a0aefc328efd1d14311f704dff4afe108}{v0id\+::\+Component}}.
+
+\mbox{\Hypertarget{classv0id_1_1component_1_1Sprite_a2725e70417bdba349a4433ce01e4976d}\label{classv0id_1_1component_1_1Sprite_a2725e70417bdba349a4433ce01e4976d}} 
+\index{v0id::component::Sprite@{v0id::component::Sprite}!load@{load}}
+\index{load@{load}!v0id::component::Sprite@{v0id::component::Sprite}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily void v0id\+::component\+::\+Sprite\+::load (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{file\+Path }\end{DoxyParamCaption})}
+
+
+
+Load the sprite from an image file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em file\+Path} & The path of the image file \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+include/v0idengine/\+ECS/Sprite.\+hpp\end{DoxyCompactItemize}
