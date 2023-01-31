@@ -4,6 +4,8 @@
 #include <map>
 #include <memory>
 
+namespace v0id {
+
 /**
  * @brief Handles the instantiation, allocation, and retrieval of resources
  * @note Resources can be sprites, fonts, or audio clips, etc.
@@ -81,5 +83,7 @@ private:
   int currentId;
   std::map<std::string, std::pair<int, std::shared_ptr<T>>> resources;
 };
+
+}
 
 #endif /* ResourceAllocator_hpp */

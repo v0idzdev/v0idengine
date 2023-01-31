@@ -2,6 +2,7 @@
 #define SPRITE_HPP
 
 #include "Component.hpp"
+#include "ResourceAllocator.hpp"
 #include "Transform.hpp"
 
 namespace v0id::component {
@@ -21,11 +22,25 @@ public:
   Sprite(Object* owner);
 
   /**
+   * @brief Assign the sprite component a texture allocator
+   *
+   * @param allocator The allocator
+   */
+  void setTextureAllocator(ResourceAllocator<sf::Texture>* allocator);
+
+  /**
    * @brief Load the sprite from an image file
    *
    * @param filePath The path of the image file
    */
   void load(const std::string& filePath);
+
+  /**
+   * @brief Load the sprite from a
+   *
+   * @param id
+   */
+  void load(int id);
 
   /**
    * @brief Execute post-update logic for the Sprite after each frame
@@ -42,7 +57,7 @@ public:
   void draw(Window& window) override;
 
 private:
-  sf::Texture texture;
+  ResourceAllocator<sf::Texture>* allocator;
   sf::Sprite sprite;
 };
 

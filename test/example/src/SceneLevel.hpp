@@ -7,7 +7,8 @@
 class SceneLevel : public v0id::Scene
 {
 public:
-  SceneLevel(v0id::ResourcePath& resourcePath);
+  SceneLevel(v0id::ResourcePath& resourcePath,
+             v0id::ResourceAllocator<sf::Texture>& textureAllocator);
   ~SceneLevel();
 
   void onCreate() override;
@@ -20,6 +21,8 @@ public:
 private:
   v0id::ResourcePath& resourcePath;
   v0id::Input input;
+  v0id::ResourceAllocator<sf::Texture>& textureAllocator;
+  v0id::ObjectCollection objects;
 };
 
 #endif

@@ -22,6 +22,7 @@ set(PUBLIC_HEADERS
   "include/v0idengine/v0idengine.hpp"
   "include/v0idengine/Core.hpp"
   "include/v0idengine/Core/Input.hpp"
+  "include/v0idengine/Core/ResourceAllocator.hpp"
   "include/v0idengine/Core/ResourcePath.hpp"
   "include/v0idengine/Core/Window.hpp"
   "include/v0idengine/ECS.hpp"
