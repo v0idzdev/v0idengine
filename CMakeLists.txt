@@ -11,6 +11,7 @@ add_library(v0idengine
     src/Input.cpp
     src/KeyboardMovement.cpp
     src/Object.cpp
+    src/ObjectCollection.cpp
     src/ResourcePath.cpp
     src/SceneStateMachine.cpp
     src/Sprite.cpp
@@ -27,6 +28,7 @@ set(PUBLIC_HEADERS
   "include/v0idengine/ECS/Component.hpp"
   "include/v0idengine/ECS/KeyboardMovement.hpp"
   "include/v0idengine/ECS/Object.hpp"
+  "include/v0idengine/ECS/ObjectCollection.hpp"
   "include/v0idengine/ECS/Sprite.hpp"
   "include/v0idengine/ECS/Transform.hpp"
   "include/v0idengine/Scenes.hpp"

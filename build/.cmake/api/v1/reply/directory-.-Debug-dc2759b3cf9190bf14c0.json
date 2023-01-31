@@ -1,0 +1,111 @@
+{
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"install"
+		],
+		"files" : 
+		[
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 68,
+				"parent" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 77,
+				"parent" : 0
+			}
+		]
+	},
+	"installers" : 
+	[
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"libv0idengine.so.0.1.0",
+				"libv0idengine.so.1"
+			],
+			"targetId" : "v0idengine::@6890427a1f51a3e7e1df",
+			"targetIndex" : 0,
+			"targetInstallNamelink" : "skip",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "lib",
+			"paths" : 
+			[
+				"libv0idengine.so"
+			],
+			"targetId" : "v0idengine::@6890427a1f51a3e7e1df",
+			"targetIndex" : 0,
+			"targetInstallNamelink" : "only",
+			"type" : "target"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include",
+			"paths" : 
+			[
+				"include/Bitmask.hpp",
+				"include/EnumHash.hpp"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 1,
+			"component" : "Unspecified",
+			"destination" : "include/v0idengine",
+			"paths" : 
+			[
+				"include/v0idengine/v0idengine.hpp",
+				"include/v0idengine/Core.hpp",
+				"include/v0idengine/Core/Input.hpp",
+				"include/v0idengine/Core/ResourcePath.hpp",
+				"include/v0idengine/Core/Window.hpp",
+				"include/v0idengine/ECS.hpp",
+				"include/v0idengine/ECS/Component.hpp",
+				"include/v0idengine/ECS/KeyboardMovement.hpp",
+				"include/v0idengine/ECS/Object.hpp",
+				"include/v0idengine/ECS/ObjectCollection.hpp",
+				"include/v0idengine/ECS/Sprite.hpp",
+				"include/v0idengine/ECS/Transform.hpp",
+				"include/v0idengine/Scenes.hpp",
+				"include/v0idengine/Scenes/Scene.hpp",
+				"include/v0idengine/Scenes/SceneStateMachine.hpp"
+			],
+			"type" : "file"
+		},
+		{
+			"backtrace" : 2,
+			"component" : "Unspecified",
+			"destination" : "share/pkgconfig",
+			"paths" : 
+			[
+				"build/v0idengine.pc"
+			],
+			"type" : "file"
+		}
+	],
+	"paths" : 
+	{
+		"build" : ".",
+		"source" : "."
+	}
+}
