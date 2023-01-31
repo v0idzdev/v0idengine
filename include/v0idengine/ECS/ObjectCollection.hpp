@@ -38,9 +38,14 @@ public:
   /**
    * @brief Process objects added this frame
    * @note Enables objects added this frame to be updated, drawn, etc. Normally,
-   * * this is called at the beginning or end of a frame
+   * this is called at the beginning or end of a frame
    */
   void processNew();
+
+  /**
+   * @brief Remove Objects that are queued for removal
+   *
+   */
   void processRemovals();
 
 private:

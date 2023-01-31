@@ -47,4 +47,16 @@ Object::draw(Window& window)
   }
 }
 
+void
+Object::queueForRemoval()
+{
+  queuedForRemoval = true;
+}
+
+bool
+Object::isQueuedForRemoval()
+{
+  return queuedForRemoval;
+}
+
 }

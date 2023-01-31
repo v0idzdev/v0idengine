@@ -60,6 +60,17 @@ ObjectCollection::processNew()
 void
 ObjectCollection::processRemovals()
 {
+  auto it = objects.begin();
+
+  while (it != objects.end()) {
+    auto object = **it;
+
+    if (object.isQueuedForRemoval()) {
+      it = objects.erase(it);
+    } else {
+      ++it;
+    }
+  }
 }
 
 }

@@ -95,8 +95,24 @@ public:
     return nullptr;
   }
 
+  /**
+   * @brief Remove an Object from an ObjectCollection
+   * @note If an ObjectCollection contains an Object queued for removal, it will
+   * be removed when ObjectCollection::processRemovals is called
+   *
+   */
+  void queueForRemoval();
+
+  /**
+   * @brief Check whether the Object will be removed from an ObjectCollection
+   *
+   * @return True if queued for removal
+   */
+  bool isQueuedForRemoval();
+
 private:
   std::vector<std::shared_ptr<Component>> components;
+  bool queuedForRemoval;
 };
 
 }
