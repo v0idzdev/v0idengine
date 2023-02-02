@@ -1,7 +1,10 @@
 #ifndef BITMASK_HPP
 #define BITMASK_HPP
 
+extern "C"
+{
 #include <stdint.h>
+}
 
 namespace v0id {
 

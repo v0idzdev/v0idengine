@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.9)
+cmake_minimum_required(VERSION 3.25)
 project(v0idengine
   VERSION 0.1.0
   DESCRIPTION "A minimal 2D game engine"
@@ -20,21 +20,18 @@ add_library(v0idengine
   )
 set(PUBLIC_HEADERS
   "include/v0idengine/v0idengine.hpp"
-  "include/v0idengine/Core.hpp"
-  "include/v0idengine/Core/Input.hpp"
-  "include/v0idengine/Core/ResourceAllocator.hpp"
-  "include/v0idengine/Core/ResourcePath.hpp"
-  "include/v0idengine/Core/Window.hpp"
-  "include/v0idengine/ECS.hpp"
-  "include/v0idengine/ECS/Component.hpp"
-  "include/v0idengine/ECS/KeyboardMovement.hpp"
-  "include/v0idengine/ECS/Object.hpp"
-  "include/v0idengine/ECS/ObjectCollection.hpp"
-  "include/v0idengine/ECS/Sprite.hpp"
-  "include/v0idengine/ECS/Transform.hpp"
-  "include/v0idengine/Scenes.hpp"
-  "include/v0idengine/Scenes/Scene.hpp"
-  "include/v0idengine/Scenes/SceneStateMachine.hpp"
+  "include/v0idengine/Component.hpp"
+  "include/v0idengine/Input.hpp"
+  "include/v0idengine/KeyboardMovement.hpp"
+  "include/v0idengine/Object.hpp"
+  "include/v0idengine/ObjectCollection.hpp"
+  "include/v0idengine/ResourceAllocator.hpp"
+  "include/v0idengine/ResourcePath.hpp"
+  "include/v0idengine/Scene.hpp"
+  "include/v0idengine/SceneStateMachine.hpp"
+  "include/v0idengine/Sprite.hpp"
+  "include/v0idengine/Transform.hpp"
+  "include/v0idengine/Window.hpp"
   )
 set(PRIVATE_HEADERS
   "include/Bitmask.hpp"
@@ -53,9 +50,6 @@ target_include_directories(v0idengine
     "include"
   PUBLIC
     "include/v0idengine"
-    "include/v0idengine/Core"
-    "include/v0idengine/ECS"
-    "include/v0idengine/Scenes"
   )
 
 # Set C++17
