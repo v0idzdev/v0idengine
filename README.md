@@ -33,8 +33,9 @@ cd v0idengine/
 
 - Build and install `v0idengine`
 ```bash
-cmake .
-make install
+mkdir -p build && cd build
+cmake ..
+sudo make install
 ```
 
 #### Windows 10/11
