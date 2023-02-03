@@ -62,7 +62,7 @@ public:
    * @return An pointer to the instance of the added component
    */
   template<typename T>
-  std::shared_ptr<T> addComponent()
+  inline std::shared_ptr<T> addComponent()
   {
     static_assert(std::is_base_of<Component, T>::value,
                   "T must derive from Component");
@@ -85,7 +85,7 @@ public:
    * not found
    */
   template<typename T>
-  std::shared_ptr<T> getComponent()
+  inline std::shared_ptr<T> getComponent()
   {
     // Return existing component of this type if we already have one
     for (auto& component : components)

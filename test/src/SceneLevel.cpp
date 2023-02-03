@@ -23,7 +23,7 @@ SceneLevel::onCreate()
   auto player = std::make_shared<v0id::Object>();
   auto sprite = player->addComponent<v0id::component::Sprite>();
   sprite->setTextureAllocator(&textureAllocator);
-  sprite->load(textureAllocator.add(resourcePath.get() + "car.png"));
+  sprite->load(resourcePath.get() + "car.png");
 
   auto controller = player->addComponent<CarMovement>();
   controller->setInput(&input);

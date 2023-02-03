@@ -22,7 +22,7 @@ public:
    * @param filePath The path of the resource
    * @return The ID of the resource
    */
-  int add(const std::string& filePath)
+  inline int add(const std::string& filePath)
   {
     auto it = resources.find(filePath);
     if (it != resources.end()) {
@@ -45,7 +45,7 @@ public:
    *
    * @param id The ID of the resource
    */
-  void remove(int id)
+  inline void remove(int id)
   {
     for (auto it = resources.begin(); it != resources.end(); ++it) {
       if (it->second.first == id) {
@@ -60,7 +60,7 @@ public:
    * @param id The ID of the resource
    * @return A shared pointer to the resource if found, else nullptr
    */
-  std::shared_ptr<T> get(int id)
+  inline std::shared_ptr<T> get(int id)
   {
     for (auto it = resources.begin(); it != resources.end(); ++it) {
       if (it->second.first == id) {
@@ -77,7 +77,7 @@ public:
    * @param id The ID of the resource
    * @return True if the ResourceAllocator contains the resource with the ID
    */
-  bool has(int id) { return (get(id) != nullptr); }
+  inline bool has(int id) { return (get(id) != nullptr); }
 
 private:
   int currentId;
