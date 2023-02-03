@@ -11,10 +11,10 @@ A lightweight game engine for 2D titles, with minimal overhead.
 
 | Distribution | Package Manager | Required Packages |
 |---|---|---|
-| Arch         | `pacman`        | `git` `cmake` `base-devel` `sfml` |
-| Debian       | `apt`           | `git` `cmake` `build-essential` `libsfml-dev` |
-| Fedora*      | `dnf`           | `git-all` `cmake` `sfml-dev` |
-| Red Hat**    | `rpm`           | `git` `cmake` `sfml-dev` |
+| Arch         | `pacman`        | `git` `cmake` `base-devel` `sfml` `doxygen` |
+| Debian       | `apt`           | `git` `cmake` `build-essential` `libsfml-dev` `doxygen` |
+| Fedora*      | `dnf`           | `git-all` `cmake` `sfml-dev` `doxygen` |
+| Red Hat**    | `rpm`           | `git` `cmake` `sfml-dev` `doxygen` |
 
 `*` — On Fedora, the following command must be executed:
 ```bash
