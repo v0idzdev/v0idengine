@@ -2,6 +2,7 @@
 
 Game::Game()
   : window("My Game")
+  , resourcePath("../resources/")
 {
   // Create a splash screen scene
   std::shared_ptr<SceneSplashScreen> splashScreen =

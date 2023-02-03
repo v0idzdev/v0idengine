@@ -49,7 +49,7 @@ target_include_directories(v0idengine
     "src"
     "include"
   PUBLIC
-    "include/v0idengine"
+   "include/v0idengine"
   )
 
 # Set C++17

@@ -21,6 +21,11 @@ ResourcePath::ResourcePath()
 #endif
 }
 
-ResourcePath::~ResourcePath() {}
+ResourcePath::ResourcePath(std::string path)
+  : ResourcePath()
+{
+  this->path = path;
+}
 
+ResourcePath::~ResourcePath() {}
 }

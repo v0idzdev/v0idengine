@@ -32,6 +32,14 @@ public:
    *
    */
   ResourcePath();
+
+  /**
+   * @brief Construct a new Resource Path object
+   *
+   * @param path The path of the resources directory
+   */
+  ResourcePath(std::string path);
+
   ~ResourcePath();
 
   /**
